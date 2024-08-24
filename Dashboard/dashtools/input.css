@@ -1,0 +1,16 @@
+.input{
+   position: relative;
+   display: flex;
+ 
+}
+.input span{
+    position: absolute;
+    right: 7px;
+    margin-top: 7px;
+}
+.auth-submit{
+    margin-top:25px ;
+}
+.con{
+    margin-top: 20px;
+}
