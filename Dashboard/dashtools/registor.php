@@ -55,60 +55,65 @@ session_start();
             <div class="logo">
                 <a href="index.html">Neptune</a>
             </div>
-            <p class="auth-description">Please enter your credentials to create an account.<br>Already have an account? <a href="sign-in.html">Sign In</a></p>
+            <p class="auth-description">Please enter your credentials to create an account.<br>Already have an account? <a href="login.php">Sign In</a></p>
             <form action="manage.php" method="POST">
                 <div class="auth-credentials m-b-xxl">
                     <label for="signUpUsername" class="form-label">Name</label>
-                    <input name="name" type="text" class="form-control m-b-md <?php if(isset( $_SESSION['name_error'])){
-                        echo 'is-invalid';
-                    }else '';
-                    ?>" id="signUpUsername" aria-describedby="signUpUsername" placeholder="Enter Name">
-                    
+                    <input name="name" type="text" class="form-control m-b-md <?php if (isset($_SESSION['name_error'])) {
+                                                                                    echo 'is-invalid';
+                                                                                } else '';
+                                                                                ?>" id="signUpUsername" aria-describedby="signUpUsername" placeholder="Enter Name">
+
                     <!-- name require  start..........................................-->
-                    <?php if(isset($_SESSION['name_error'])) { ?> 
-                    <div id="emailHelp" class="form-text m-b-md text-danger"><?php echo $_SESSION['name_error']?></div>
-                    <?php } unset( $_SESSION['name_error']) ?> 
+                    <?php if (isset($_SESSION['name_error'])) { ?>
+                        <div id="emailHelp" class="form-text m-b-md text-danger"><?php echo $_SESSION['name_error'] ?></div>
+                    <?php }
+                    unset($_SESSION['name_error']) ?>
                     <!-- name require  end...............................................-->
-                    
+
                     <label for="signUpEmail" class="form-label">Email address</label>
-                    <input name="email" type="email" class="form-control m-b-md <?php if(isset( $_SESSION['email_error'])){
-                        echo 'is-invalid';
-                    }else '';   ?>
+                    <input name="email" type="email" class="form-control m-b-md <?php if (isset($_SESSION['email_error'])) {
+                                                                                    echo 'is-invalid';
+                                                                                } else {
+                                                                                };   ?>
                   
                      " id="signUpEmail" aria-describedby="signUpEmail" placeholder="example@neptune.com">
 
                     <!--email require  start...............................................-->
-                    <?php if(isset($_SESSION['email_error'])) { ?> 
-                    <div id="emailHelp" class="form-text m-b-md text-danger"><?php echo $_SESSION['email_error']?></div>
-                    <?php } unset( $_SESSION['email_error']) ?> 
+                    <?php if (isset($_SESSION['email_error'])) { ?>
+                        <div id="emailHelp" class="form-text m-b-md text-danger"><?php echo $_SESSION['email_error'] ?></div>
+                    <?php }
+                    unset($_SESSION['email_error']) ?>
                     <!-- email require  end................................................-->
-                    
+
                     <label for="signUpPassword" class="form-label">Password</label>
                     <div class="input">
                         <input name="password" type="password" class="form-control" id="signUpPassword" aria-describedby="signUpPassword" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
-                        <span class="icon" type="" onclick="showpassword()"> <span style="font-size:1rem;font-weight:900px;">👁️</span>
-                    </div>
-
-                      <!--password require  start...............................................-->
-                      <?php if(isset($_SESSION['pass-error'])) { ?> 
-                    <div id="emailHelp" class="form-text m-b-md text-danger"><?php echo $_SESSION['pass-error']?></div>
-                    <?php } unset($_SESSION['pass-error']) ?> 
-                      <!--password require  end...............................................-->
-
-                   <div class="con">
-                   <label for="signUpCPassword" class="form-label ">Confirm Password</label>
-                    <div class="input">
-                        <input name="cpassword" type="password" class="form-control" id="signUpCPassword" aria-describedby="signUpPassword" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
-                        <span class="icon" type="" onclick="showcpassword()"> <span style="font-size:1rem;font-weight:900px;">👁️</i></span>
 
                     </div>
-                   </div>
+
+                    <!--password require  start...............................................-->
+                    <?php if (isset($_SESSION['pass-error'])) { ?>
+                        <div id="emailHelp" class="form-text m-b-md text-danger"><?php echo $_SESSION['pass-error'] ?></div>
+                    <?php }
+                    unset($_SESSION['pass-error']) ?>
+                    <!--password require  end...............................................-->
+
+                    <div class="con">
+                        <label for="signUpCPassword" class="form-label ">Confirm Password</label>
+                        <div class="input">
+                            <input name="cpassword" type="password" class="form-control" id="signUpCPassword" aria-describedby="signUpPassword" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
+                        </div>
+                    </div>
 
                     <!--Cpassword require  start...............................................-->
-                   <?php if(isset( $_SESSION['Cpass-error'])) { ?> 
-                    <div id="emailHelp" class="form-text m-b-md text-danger"><?php echo $_SESSION['Cpass-error']?></div>
-                    <?php } unset($_SESSION['Cpass-error']) ?> 
-                <!--Cpassword require  end...............................................-->
+                    <?php if (isset($_SESSION['Cpass-error'])) { ?>
+                        <div id="emailHelp" class="form-text m-b-md text-danger"><?php echo $_SESSION['Cpass-error'] ?></div>
+                    <?php }
+                    unset($_SESSION['Cpass-error']) ?>
+                    <!--Cpassword require  end...............................................-->
+
+
                     <div class="auth-submit">
                         <button type="submit" name="btn" class="btn btn-primary"> Sign Up </button>
                     </div>
@@ -125,7 +130,7 @@ session_start();
     <script src="../public/backend/assets/js/main.min.js"></script>
     <script src="../public/backend/assets/js/custom.js"></script>
 
-    <script>
+    <!-- <script>
         function showpassword() {
             var x = document.getElementById('signUpPassword');
             if (x.type === "password") {
@@ -146,7 +151,7 @@ session_start();
             }
         }
         showcpassword();
-    </script>
+    </script> -->
 </body>
 
 </html>
