@@ -16,7 +16,7 @@ session_start();
     <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Neptune - Responsive Admin Dashboard Template</title>
+    <title>Dashboard register</title>
 
     <!-- Styles -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -115,7 +115,7 @@ session_start();
 
 
                     <div class="auth-submit">
-                        <button type="submit" name="btn" class="btn btn-primary"> Sign Up </button>
+                        <button type="submit" name="btn" class="btn btn-primary" style="margin-top: 20px;"> Sign Up </button>
                     </div>
             </form>
             <div class="divider"></div>

@@ -23,7 +23,7 @@ if(isset( $_SESSION['author_id'])){
     <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Neptune - Responsive Admin Dashboard Template</title>
+    <title>Dashboard Login</title>
 
     <!-- Styles -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
