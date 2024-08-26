@@ -182,6 +182,7 @@ if(isset($_POST['loginbtn'])){
         $_SESSION['author_name'] = $author['name'];
         $_SESSION['temp_name'] = $author['name'];
         $_SESSION['author_email'] = $author['email'];
+        $_SESSION['author_password'] = $author['password'];
 
         header('location: ../dashboard/home/home.php');
 

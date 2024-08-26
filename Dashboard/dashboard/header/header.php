@@ -67,7 +67,7 @@ $link = end($explode);
                     <a style="display: flex;" href="#">
                         <span class="activity-indicator"></span>
                         <span class="user-info-text"><?= $_SESSION['author_name'] ?><br><span class="user-state-info"><?= $_SESSION['author_email'] ?></span></span>
-                        <img style="width: 50px;" src="../../public/backend/assets/images/Photoroom-20240821_004044.png">
+                        <img style="width: 40px;" src="../../public/backend/assets/images/Photoroom-20240821_004044.png">
                     </a>
                 </div>
             </div>

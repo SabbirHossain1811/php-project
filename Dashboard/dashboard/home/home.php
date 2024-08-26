@@ -18,7 +18,7 @@ include '../header/footer.php';
                 <div class="custom-alert-icon icon-dark"><i class="material-icons-outlined">done</i></div>
                 <div class="alert-content">
                     <span class="alert-title"> <i style="font-size:35px; color:tomato" class="fa-solid fa-person-drowning"></i>Welcome...! Mr. <?= $_SESSION['author_name'] ?></span>
-                    <span class="alert-text"><i style="font-size:20px;" class="fa-solid fa-envelope-circle-check"></i> - <b><?= $_SESSION['author_email'] ?></b> </span>
+                    <span class="alert-text"><i style="font-size:20px;" class="fa-solid fa-envelope-circle-check"></i> - <b><?= $_SESSION['author_email']?></b> </span>
                 </div>
             </div>
         <?php endif;
