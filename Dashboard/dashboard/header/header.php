@@ -1,23 +1,30 @@
-
-
 <?php
 session_start();
 
 include '../../config/database.php';
 
-if(!isset( $_SESSION['author_id'])){
-   header('location: ../../dashtools/login.php');
-
+// logout sesssion query......
+if (!isset($_SESSION['author_id'])) {
+    header('location: ../../dashtools/login.php');
 }
+// logout sesssion query......
 
-$explode = explode('/',$_SERVER['PHP_SELF']);
+
+$explode = explode('/', $_SERVER['PHP_SELF']);
 $link = end($explode);
 
+// image update...query........
+$id = $_SESSION['author_id'];
+$users_query = "SELECT * FROM users WHERE id='$id'";
+$conncet = mysqli_query($db, $users_query);
+$user = mysqli_fetch_assoc($conncet);
 
 
+// image update...query........
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,7 +33,7 @@ $link = end($explode);
     <meta name="keywords" content="admin,dashboard">
     <meta name="author" content="stacks">
     <!-- The above 6 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    
+
     <!-- Title -->
     <title>Dashboard home</title>
 
@@ -43,7 +50,6 @@ $link = end($explode);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="../../../public/backend/assets/plugins/pace/pace.css" rel="stylesheet">
 
-    
     <!-- Theme Styles -->
     <link href="../../public/dashCss/css/main.min.css" rel="stylesheet">
     <link href="../../public/dashCss/css/custom.css" rel="stylesheet">
@@ -58,35 +64,41 @@ $link = end($explode);
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
-<div class="app-sidebar">
 
-            <div class="logo">
+<body>
+    <div class="app-sidebar">
+
+        <div class="logo">
             <!-- <a href="index.html" class="logo-icon"><span class="logo-text">Neptune</span></a> -->
-                <div  class="sidebar-user-switcher user-activity-online">
-                    <a style="display: flex;" href="#">
-                        <span class="activity-indicator"></span>
-                        <span class="user-info-text"><?= $_SESSION['author_name'] ?><br><span class="user-state-info"><?= $_SESSION['author_email'] ?></span></span>
-                        <img style="width: 40px;" src="../../public/backend/assets/images/Photoroom-20240821_004044.png">
-                    </a>
-                </div>
+            <div class="sidebar-user-switcher user-activity-online">
+                <a style="display: flex;" href="#">
+                    <span class="activity-indicator"></span>
+                    <span class="user-info-text"><?= $_SESSION['author_name'] ?><br><span class="user-state-info"><?= $_SESSION['author_email'] ?></span></span>
+                    
+                    <?php if ($user['image'] == 'defult imge.png') : ?>
+                        <img style="width: 40px;" src="../../public/update/defult/<?= $user['image'] ?>">
+                    <?php else : ?>
+                        <img style="width: 40px;" src="../../public/update/profile/<?= $user['image'] ?>">
+                    <?php endif; ?>
+                </a>
             </div>
-            <div class="app-menu">
-                <ul class="accordion-menu">
-                    <li class="sidebar-title">
-                        Apps
-                    </li>
-                    <li class="<?= ($link == 'home.php') ? 'active-page' : '' ?>">
-                        <a href="../home/home.php" class="active"><i class="material-icons-two-tone">dashboard</i>Dashboard</a>
-                    </li>
-                    <!-- <li>
+        </div>
+        <div class="app-menu">
+            <ul class="accordion-menu">
+                <li class="sidebar-title">
+                    Apps
+                </li>
+                <li class="<?= ($link == 'home.php') ? 'active-page' : '' ?>">
+                    <a href="../home/home.php" class="active"><i class="material-icons-two-tone">dashboard</i>Dashboard</a>
+                </li>
+                <!-- <li>
                         <a href="mailbox.html"><i class="material-icons-two-tone">inbox</i>Mailbox<span class="badge rounded-pill badge-danger float-end">87</span></a>
                     </li> -->
-                    <li class="<?= ($link == 'settings.php') ? 'active-page' : '' ?>">
-                        <a href="../settings/settings.php"><i class="material-icons-two-tone">settings</i>Settings</a>
-                    </li>
+                <li class="<?= ($link == 'settings.php') ? 'active-page' : '' ?>">
+                    <a href="../settings/settings.php"><i class="material-icons-two-tone">settings</i>Settings</a>
+                </li>
 
-                    <!-- <li>
+                <!-- <li>
                         <a href="calendar.html"><i class="material-icons-two-tone">calendar_today</i>Calendar<span class="badge rounded-pill badge-success float-end">14</span></a>
                     </li>
                     <li>
@@ -123,78 +135,78 @@ $link = end($explode);
                             </li>
                         </ul>
                     </li> -->
-                </ul>
-            </div>
+            </ul>
         </div>
-        <div class="app-container">
-            <div class="search">
-                <form>
-                    <input class="form-control" type="text" placeholder="Type here..." aria-label="Search">
-                </form>
-                <a href="#" class="toggle-search"><i class="material-icons">close</i></a>
-            </div>
-            <div class="app-header">
-                <nav class="navbar navbar-light navbar-expand-lg">
-                    <div class="container-fluid">
-                        <div class="navbar-nav" id="navbarNav">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link hide-sidebar-toggle-button" href="#"><i class="material-icons">first_page</i></a>
-                                </li>
-                                <li class="nav-item dropdown hidden-on-mobile">
-                                    <a class="nav-link dropdown-toggle" href="#" id="addDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="material-icons">add</i>
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="addDropdownLink">
-                                        <li><a class="dropdown-item" href="#">New Workspace</a></li>
-                                        <li><a class="dropdown-item" href="#">New Board</a></li>
-                                        <li><a class="dropdown-item" href="#">Create Project</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown hidden-on-mobile">
-                                    <a class="nav-link dropdown-toggle" href="#" id="exploreDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="material-icons-outlined">explore</i>
-                                    </a>
-                                    <ul class="dropdown-menu dropdown-lg large-items-menu" aria-labelledby="exploreDropdownLink">
-                                        <li>
-                                            <h6 class="dropdown-header">Repositories</h6>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <h5 class="dropdown-item-title">
-                                                    Neptune iOS
-                                                    <span class="badge badge-warning">1.0.2</span>
-                                                    <span class="hidden-helper-text">switch<i class="material-icons">keyboard_arrow_right</i></span>
-                                                </h5>
-                                                <span class="dropdown-item-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">
-                                                <h5 class="dropdown-item-title">
-                                                    Neptune Android
-                                                    <span class="badge badge-info">dev</span>
-                                                    <span class="hidden-helper-text">switch<i class="material-icons">keyboard_arrow_right</i></span>
-                                                </h5>
-                                                <span class="dropdown-item-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
-                                            </a>
-                                        </li>
-                                        <li class="dropdown-btn-item d-grid">
-                                            <button class="btn btn-primary">Create new repository</button>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-            
-                        </div>
-                        <div class="d-flex">
-                            <ul class="navbar-nav">
-                                <!-- Dashboard LogOut here...........!! -->
+    </div>
+    <div class="app-container">
+        <div class="search">
+            <form>
+                <input class="form-control" type="text" placeholder="Type here..." aria-label="Search">
+            </form>
+            <a href="#" class="toggle-search"><i class="material-icons">close</i></a>
+        </div>
+        <div class="app-header">
+            <nav class="navbar navbar-light navbar-expand-lg">
+                <div class="container-fluid">
+                    <div class="navbar-nav" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link hide-sidebar-toggle-button" href="#"><i class="material-icons">first_page</i></a>
+                            </li>
+                            <li class="nav-item dropdown hidden-on-mobile">
+                                <a class="nav-link dropdown-toggle" href="#" id="addDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="material-icons">add</i>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="addDropdownLink">
+                                    <li><a class="dropdown-item" href="#">New Workspace</a></li>
+                                    <li><a class="dropdown-item" href="#">New Board</a></li>
+                                    <li><a class="dropdown-item" href="#">Create Project</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown hidden-on-mobile">
+                                <a class="nav-link dropdown-toggle" href="#" id="exploreDropdownLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="material-icons-outlined">explore</i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-lg large-items-menu" aria-labelledby="exploreDropdownLink">
+                                    <li>
+                                        <h6 class="dropdown-header">Repositories</h6>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <h5 class="dropdown-item-title">
+                                                Neptune iOS
+                                                <span class="badge badge-warning">1.0.2</span>
+                                                <span class="hidden-helper-text">switch<i class="material-icons">keyboard_arrow_right</i></span>
+                                            </h5>
+                                            <span class="dropdown-item-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <h5 class="dropdown-item-title">
+                                                Neptune Android
+                                                <span class="badge badge-info">dev</span>
+                                                <span class="hidden-helper-text">switch<i class="material-icons">keyboard_arrow_right</i></span>
+                                            </h5>
+                                            <span class="dropdown-item-description">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-btn-item d-grid">
+                                        <button class="btn btn-primary">Create new repository</button>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="d-flex">
+                        <ul class="navbar-nav">
+                            <!-- Dashboard LogOut here...........!! -->
                             <li class="nav-item hidden-on-mobile">
-                                    <a style="font-size:14px; font:bold; display:flex; gap:11px; width:91px; color:white;     background-color:#0d4efd; border-radius:10px" class="nav-link btn " href="../logout/logout.php">LogOut <i style="margin-top: 2px;" class="fa-solid fa-person-walking-luggage"></i></a>
-                                    
-                                </li>
-                                   <!-- Dashboard LogOut here...........!! -->
+                                <a style="font-size:14px; font:bold; display:flex; gap:11px; width:91px; color:white;     background-color:#0d4efd; border-radius:10px" class="nav-link btn " href="../logout/logout.php">LogOut <i style="margin-top: 2px;" class="fa-solid fa-person-walking-luggage"></i></a>
+
+                            </li>
+                            <!-- Dashboard LogOut here...........!! -->
 
 
 
@@ -204,7 +216,7 @@ $link = end($explode);
 
 
 
-                                <!-- <li class="nav-item hidden-on-mobile">
+                            <!-- <li class="nav-item hidden-on-mobile">
                                     <a class="nav-link" href="#">Reports</a>
                                 </li>
                                 <li class="nav-item hidden-on-mobile">
@@ -213,7 +225,7 @@ $link = end($explode);
                                 <li class="nav-item">
                                     <a class="nav-link toggle-search" href="#"><i class="material-icons">search</i></a>
                                 </li> -->
-                                <!-- <li class="nav-item hidden-on-mobile">
+                            <!-- <li class="nav-item hidden-on-mobile">
                                     <a class="nav-link language-dropdown-toggle" href="#" id="languageDropDown" data-bs-toggle="dropdown"><img src="../../../public/backend/assets/images/flags/us.png" alt=""></a>
                                         <ul class="dropdown-menu dropdown-menu-end language-dropdown" aria-labelledby="languageDropDown">
                                             <li><a class="dropdown-item" href="#"><img src="../../../public/backend/assets/images/flags/germany.png" alt="">German</a></li>
@@ -294,13 +306,13 @@ $link = end($explode);
                                         </div>
                                     </div>
                                 </li> -->
-                                
-                            </ul>
-                        </div>
+
+                        </ul>
                     </div>
-                </nav>
-            </div>
-            <div class="app-content">
-                <div class="content-wrapper">
-                    <div class="container">
-                        <!-- header end -->
+                </div>
+            </nav>
+        </div>
+        <div class="app-content">
+            <div class="content-wrapper">
+                <div class="container">
+                    <!-- header end -->

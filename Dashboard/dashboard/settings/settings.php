@@ -1,3 +1,4 @@
+
 <?php
 
 include '../header/header.php';
@@ -52,7 +53,7 @@ include '../header/header.php';
 
 
 
-    <div class="col-6">
+    <div class="col-5">
         <div class="card">
             <div class="card-header">
                 <h4 style="font-weight: bold;"> Update Your Password...!! </h4>
@@ -60,9 +61,9 @@ include '../header/header.php';
             <form action="setting-manag.php" method="POST">
                 <div class="card-body">
                     <label style="font-weight: bold; margin-top:5px;" for="exampleInputEmail1" class="form-label">Current Password...!!</label>
-                    
+
                     <input style="font-size: 15px;" type="password" name="oldpass" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Current password.....!!">
-                    
+
 
                     <label style="font-weight: bold;  margin-top:15px;" for="exampleInputEmail1" class="form-label">New Password...!!</label>
                     <input style="font-size: 15px;" type="password" name="newpass" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=" Update password.....!!">
@@ -70,29 +71,28 @@ include '../header/header.php';
                     <label style="font-weight: bold;  margin-top:15px;" for="exampleInputEmail1" class="form-label"> Confrim Password...!!</label>
                     <input style="font-size: 15px;" type="password" name="cpass" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Update Confrim password.....!!">
                     <!-- php success code -->
-                            <?php if(isset($_SESSION['pass_update'])) : ?>
-                            <div style="font-size:16px;" id="emailHelp" class="form-text text-success">
-                                <?= $_SESSION['pass_update'] ?>
-                            </div>
-                            <?php endif; unset($_SESSION['pass_update']);?>
-                            <!-- php success code -->
-                            <!-- php error code -->
-                            <?php if(isset($_SESSION['pass_error'])) : ?>
-                            <div style="font-size:16px;" id="emailHelp" class="form-text text-danger">
-                                <?= $_SESSION['pass_error'] ?>
-                            </div>
-                            <?php endif; unset($_SESSION['pass_error']);?>
-                            <!-- php error code -->
-                    
+                    <?php if (isset($_SESSION['pass_update'])) : ?>
+                        <div style="font-size:16px;" id="emailHelp" class="form-text text-success">
+                            <?= $_SESSION['pass_update'] ?>
+                        </div>
+                    <?php endif;
+                    unset($_SESSION['pass_update']); ?>
+                    <!-- php success code -->
+                    <!-- php error code -->
+                    <?php if (isset($_SESSION['pass_error'])) : ?>
+                        <div style="font-size:16px;" id="emailHelp" class="form-text text-danger">
+                            <?= $_SESSION['pass_error'] ?>
+                        </div>
+                    <?php endif;
+                    unset($_SESSION['pass_error']); ?>
+                    <!-- php error code -->
+
                     <div class="d-grid gap-2">
                         <button style=" font-size: 15px; font-weight: bold;" class="btn btn-primary mt-4" type="submit" name="passubtn">Update..!!</button>
 
                     </div>
                 </div>
             </form>
-
-
-
         </div>
     </div>
 
@@ -130,10 +130,32 @@ include '../header/header.php';
 
         </div>
     </div>
+
+
+<!-- 
+    IMAGE UPDATE HERE  -->
+    <div class="col-5">
+        <div class="card">
+            <div class="card-header">
+                <h4 style="font-weight: bold;"> Update Your Image...!! </h4>
+            </div>
+            <form action="setting-manag.php" method="POST" enctype="multipart/form-data">
+                <div class="card-body">
+                    <label style="font-weight: bold; margin-top:5px;" for="exampleInputEmail1" class="form-label"> Image Update...!!</label>
+
+                    <input style="font-size: 15px;" type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder=" Image Update.....!!">
+
+                    <div class="d-grid gap-2">
+                        <button style=" font-size: 15px; font-weight: bold;" class="btn btn-primary mt-4" type="submit" name="imgbtn">Update..!!</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- //IMAGE UPDATE HERE// -->
 </div>
-
-
-
 <?php
 
 include '../header/footer.php';

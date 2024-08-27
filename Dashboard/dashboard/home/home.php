@@ -37,7 +37,7 @@ include '../header/footer.php';
                                     <th scope="col">#</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Email</th>
-                                    <th scope="col">Action.</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
@@ -61,9 +61,7 @@ include '../header/footer.php';
                                     <td>
                                     <?= $user['email']?>
                                     </td>
-                                    <td>
-                                     18-11
-                                    </td>
+                                    
                                 </tr>
                                 <?php endforeach; ?>
                             </tbody>
