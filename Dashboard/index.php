@@ -1,6 +1,21 @@
 
 <?php   
 
+include './config/database.php';
+session_start();
+if( isset($_SESSION['author_id'])){
+    $id = $_SESSION['author_id'];
+    $users_query = "SELECT * FROM users WHERE id='$id'";
+    $conncet = mysqli_query($db, $users_query);
+   $user = mysqli_fetch_assoc($conncet);
+}else{
+    $users_query = "SELECT * FROM users";
+    $conncet = mysqli_query($db, $users_query);
+   $user = mysqli_fetch_assoc($conncet);
+}
+
+
+
 ?>
 
 
@@ -16,7 +31,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="shortcut icon" type="image/x-icon" href="./Dashboard/public/frontent/img/favicon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="./public/frontent/img/favicon.png">
         <!-- Place favicon.ico in the root directory -->
 
 		<!-- CSS here -->
@@ -53,8 +68,8 @@
                         <div class="col-xl-12">
                             <div class="main-menu">
                                 <nav class="navbar navbar-expand-lg">
-                                    <a href="index.html" class="navbar-brand logo-sticky-none"><img src="./Dashboard/public/frontent/img/logo/logo.png" alt="Logo"></a>
-                                    <a href="index.html" class="navbar-brand s-logo-none"><img src="./Dashboard/public/frontent/img/logo/s_logo.png" alt="Logo"></a>
+                                    <a href="index.html" class="navbar-brand logo-sticky-none"><img src="./public/frontent/img/logo/logo.png" alt="Logo"></a>
+                                    <a href="index.html" class="navbar-brand s-logo-none"><img src="./public/frontent/img/logo/s_logo.png" alt="Logo"></a>
                                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                                         data-target="#navbarNav">
                                         <span class="navbar-icon"></span>
@@ -88,7 +103,7 @@
                 </div>
                 <div class="logo-side mb-30">
                     <a href="index-2.html">
-                        <img src="./Dashboard/public/frontent/img/logo/logo.png" alt="" />
+                        <img src="./public/frontent/img/logo/logo.png" alt="" />
                     </a>
                 </div>
                 <div class="side-info mb-30">
@@ -128,7 +143,11 @@
                         <div class="col-xl-7 col-lg-6">
                             <div class="banner-content">
                                 <h6 class="wow fadeInUp" data-wow-delay="0.2s">HELLO!</h6>
-                                <h2 class="wow fadeInUp" data-wow-delay="0.4s">I am Will Smith</h2>
+                                <?php if(isset($_SESSION['author_id'])) : ?>
+                                <h2 class="wow fadeInUp" data-wow-delay="0.4s">I am <?= $user['name']?></h2>
+                                <?php else : ?>
+                                <h2 class="wow fadeInUp" data-wow-delay="0.4s">I am <?= $user['name']?></h2>
+                                <?php endif;?>
                                 <p class="wow fadeInUp" data-wow-delay="0.6s">I'm Will Smith, professional web developer with long time experience in this field​.</p>
                                 <div class="banner-social wow fadeInUp" data-wow-delay="0.8s">
                                     <ul>
@@ -143,12 +162,12 @@
                         </div>
                         <div class="col-xl-5 col-lg-6 d-none d-lg-block">
                             <div class="banner-img text-right">
-                                <img src="./Dashboard/public/frontent/img/banner/banner_img.png" alt="">
+                                <img style="width: 900px;" src="./public/update/profile/<?= $user['image']?>" alt="" >
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="banner-shape"><img src="./Dashboard/public/frontent/img/shape/dot_circle.png" class="rotateme" alt="img"></div>
+                <div class="banner-shape"><img src="./public/frontent/img/shape/dot_circle.png" class="rotateme" alt="img"></div>
             </section>
             <!-- banner-area-end -->
 
@@ -158,7 +177,7 @@
                     <div class="row align-items-center">
                         <div class="col-lg-6">
                             <div class="about-img">
-                                <img src="./Dashboard/public/frontent/img/banner/banner_img2.png" title="me-01" alt="me-01">
+                                <img src="./public/frontent/img/banner/banner_img2.png" title="me-01" alt="me-01">
                             </div>
                         </div>
                         <div class="col-lg-6 pr-90">
@@ -322,7 +341,7 @@
                         <div class="col-lg-4 col-md-6 pitem">
                             <div class="speaker-box">
 								<div class="speaker-thumb">
-									<img src="./Dashboard/public/frontent/img/images/1.jpg" alt="img">
+									<img src="./public/frontent/img/images/1.jpg" alt="img">
 								</div>
 								<div class="speaker-overlay">
 									<span>Design</span>
@@ -334,7 +353,7 @@
                         <div class="col-lg-4 col-md-6 pitem">
                             <div class="speaker-box">
 								<div class="speaker-thumb">
-									<img src="./Dashboard/public/frontent/img/images/2.jpg" alt="img">
+									<img src="./public/frontent/img/images/2.jpg" alt="img">
 								</div>
 								<div class="speaker-overlay">
 									<span>Video</span>
@@ -346,7 +365,7 @@
                         <div class="col-lg-4 col-md-6 pitem">
                             <div class="speaker-box">
 								<div class="speaker-thumb">
-									<img src="./Dashboard/public/frontent/img/images/3.jpg" alt="img">
+									<img src="./public/frontent/img/images/3.jpg" alt="img">
 								</div>
 								<div class="speaker-overlay">
 									<span>Audio</span>
@@ -358,7 +377,7 @@
 						<div class="col-lg-4 col-md-6 pitem">
                             <div class="speaker-box">
 								<div class="speaker-thumb">
-									<img src="./Dashboard/public/frontent/img/images/4.jpg" alt="img">
+									<img src="./public/frontent/img/images/4.jpg" alt="img">
 								</div>
 								<div class="speaker-overlay">
 									<span>Design</span>
@@ -370,7 +389,7 @@
                         <div class="col-lg-4 col-md-6 pitem">
                             <div class="speaker-box">
 								<div class="speaker-thumb">
-									<img src="./Dashboard/public/frontent/img/images/5.jpg" alt="img">
+									<img src="./public/frontent/img/images/5.jpg" alt="img">
 								</div>
 								<div class="speaker-overlay">
 									<span>Creative</span>
@@ -382,7 +401,7 @@
                         <div class="col-lg-4 col-md-6 pitem">
                             <div class="speaker-box">
 								<div class="speaker-thumb">
-									<img src="./Dashboard/public/frontent/img/images/6.jpg" alt="img">
+									<img src="./public/frontent/img/images/6.jpg" alt="img">
 								</div>
 								<div class="speaker-overlay">
 									<span>UX/UI</span>
@@ -468,7 +487,7 @@
                             <div class="testimonial-active">
                                 <div class="single-testimonial text-center">
                                     <div class="testi-avatar">
-                                        <img src="./Dashboard/public/frontent/img/images/testi_avatar.png" alt="img">
+                                        <img src="./public/frontent/img/images/testi_avatar.png" alt="img">
                                     </div>
                                     <div class="testi-content">
                                         <h4><span>“</span> An event is a message sent by an object to signal the occur rence of an action. The action can causd user interaction such as a button click, or it can result <span>”</span></h4>
@@ -480,7 +499,7 @@
                                 </div>
                                 <div class="single-testimonial text-center">
                                     <div class="testi-avatar">
-                                        <img src="./Dashboard/public/frontent/img/images/testi_avatar.png" alt="img">
+                                        <img src="./public/frontent/img/images/testi_avatar.png" alt="img">
                                     </div>
                                     <div class="testi-content">
                                         <h4><span>“</span> An event is a message sent by an object to signal the occur rence of an action. The action can causd user interaction such as a button click, or it can result <span>”</span></h4>
@@ -503,32 +522,32 @@
                     <div class="row brand-active">
                         <div class="col-xl-2">
                             <div class="single-brand">
-                                <img src="./Dashboard/public/frontent/img/brand/brand_img01.png" alt="img">
+                                <img src="./public/frontent/img/brand/brand_img01.png" alt="img">
                             </div>
                         </div>
                         <div class="col-xl-2">
                             <div class="single-brand">
-                                <img src="./Dashboard/public/frontent/img/brand/brand_img02.png" alt="img">
+                                <img src="./public/frontent/img/brand/brand_img02.png" alt="img">
                             </div>
                         </div>
                         <div class="col-xl-2">
                             <div class="single-brand">
-                                <img src="./Dashboard/public/frontent/img/brand/brand_img03.png" alt="img">
+                                <img src="./public/frontent/img/brand/brand_img03.png" alt="img">
                             </div>
                         </div>
                         <div class="col-xl-2">
                             <div class="single-brand">
-                                <img src="./Dashboard/public/frontent/img/brand/brand_img04.png" alt="img">
+                                <img src="./public/frontent/img/brand/brand_img04.png" alt="img">
                             </div>
                         </div>
                         <div class="col-xl-2">
                             <div class="single-brand">
-                                <img src="./Dashboard/public/frontent/img/brand/brand_img05.png" alt="img">
+                                <img src="./public/frontent/img/brand/brand_img05.png" alt="img">
                             </div>
                         </div>
                         <div class="col-xl-2">
                             <div class="single-brand">
-                                <img src="./Dashboard/public/frontent/img/brand/brand_img03.png" alt="img">
+                                <img src="./public/frontent/img/brand/brand_img03.png" alt="img">
                             </div>
                         </div>
                     </div>
