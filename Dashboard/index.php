@@ -3,6 +3,7 @@
 
 include './config/database.php';
 session_start();
+
 if( isset($_SESSION['author_id'])){
     $id = $_SESSION['author_id'];
     $users_query = "SELECT * FROM users WHERE id='$id'";
@@ -14,9 +15,12 @@ if( isset($_SESSION['author_id'])){
    $user = mysqli_fetch_assoc($conncet);
 }
 
+// service staer here....!!
 
-$services_query = "SELECT * FROM services";
- $services= mysqli_query($db,$services_query );
+$services_query = "SELECT * FROM services WHERE status='active'";
+$services= mysqli_query($db,$services_query );
+
+ // service staer here...!!
 ?>
 
 
@@ -279,6 +283,7 @@ $services_query = "SELECT * FROM services";
                         <?php foreach($services as $service) :?>
 						<div class="col-lg-4 col-md-6">
 							<div class="icon_box_01 wow fadeInLeft" data-wow-delay="0.2s">
+                                
                                 <i class="<?= $service['icon'] ?>"></i>
 								<h3><?= $service['title'] ?></h3>
 								<p>

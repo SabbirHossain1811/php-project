@@ -42,6 +42,7 @@ $services_query = "SELECT * FROM services";
                                 <th scope="col">#</th>
                                 <th scope="col">Icon</th>
                                 <th scope="col">Title</th>
+                                <th scope="col">status</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -52,7 +53,7 @@ $services_query = "SELECT * FROM services";
                         
                             <?php foreach($services as $service): ?>
                                
-                            <tr>
+                            <tr style="font-weight: bold;">
                             
                                 <th scope="row">
                                 <?= $num++;?>
@@ -62,6 +63,9 @@ $services_query = "SELECT * FROM services";
                                 </td>
                                 <td>
                                 <?= $service['title'] ?>
+                                </td>
+                                <td>
+                               <a style="font-size:14px; padding:7px" class="badge bg-danger text-white " href=""><?= $service['status'] ?></a>
                                 </td>
                                 <td>Deactive</td>
                             </tr>
