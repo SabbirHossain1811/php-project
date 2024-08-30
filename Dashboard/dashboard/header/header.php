@@ -49,6 +49,7 @@ $user = mysqli_fetch_assoc($conncet);
     <link href="../../../public/backend/assets/plugins/pace/pace.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="../../../public/backend/assets/plugins/pace/pace.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Theme Styles -->
     <link href="../../public/dashCss/css/main.min.css" rel="stylesheet">
@@ -96,6 +97,10 @@ $user = mysqli_fetch_assoc($conncet);
                     </li> -->
                 <li class="<?= ($link == 'settings.php') ? 'active-page' : '' ?>">
                     <a href="../settings/settings.php"><i class="material-icons-two-tone">settings</i>Settings</a>
+                </li>
+
+                <li class="<?= ($link == 'service.php') ? 'active-page' : '' ?>">
+                    <a href="../services/service.php"><i class="material-icons-two-tone">medical_services</i>Services</a>
                 </li>
 
                 <!-- <li>

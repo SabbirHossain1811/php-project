@@ -15,7 +15,8 @@ if( isset($_SESSION['author_id'])){
 }
 
 
-
+$services_query = "SELECT * FROM services";
+ $services= mysqli_query($db,$services_query );
 ?>
 
 
@@ -39,6 +40,7 @@ if( isset($_SESSION['author_id'])){
         <link rel="stylesheet" href="../Dashboard/public/frontent/css/animate.min.css">
         <link rel="stylesheet" href="../Dashboard/public/frontent/css/magnific-popup.css">
         <link rel="stylesheet" href="../Dashboard/public/frontent/css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="../Dashboard/public/frontent/css/flaticon.css">
         <link rel="stylesheet" href="../Dashboard/public/frontent/css/slick.css">
         <link rel="stylesheet" href="../Dashboard/public/frontent/css/aos.css">
@@ -83,6 +85,13 @@ if( isset($_SESSION['author_id'])){
                                             <li class="nav-item"><a class="nav-link" href="#service">service</a></li>
                                             <li class="nav-item"><a class="nav-link" href="#portfolio">portfolio</a></li>
                                             <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+
+                                            <?php if(isset($_SESSION['author_id'])) :?>
+                                            <li class="nav-item"><a class="nav-link" href="../Dashboard/dashboard/header/header.php">Dashboard</a></li>
+                                            <?php else: ?>
+                                                <li class="nav-item"><a class="nav-link" href="./dashtools/login.php">Login/Register</a></li>
+                                            <?php endif; ?>
+
                                         </ul>
                                     </div>
                                     <div class="header-btn">
@@ -162,7 +171,7 @@ if( isset($_SESSION['author_id'])){
                         </div>
                         <div class="col-xl-5 col-lg-6 d-none d-lg-block">
                             <div class="banner-img text-right">
-                                <img style="width: 900px;" src="./public/update/profile/<?= $user['image']?>" alt="" >
+                                <img style="width: 900px;" src="../Dashboard/public/update/profile/15-Idona Brewer11-27-08-2024.png" >
                             </div>
                         </div>
                     </div>
@@ -177,7 +186,7 @@ if( isset($_SESSION['author_id'])){
                     <div class="row align-items-center">
                         <div class="col-lg-6">
                             <div class="about-img">
-                                <img src="./public/frontent/img/banner/banner_img2.png" title="me-01" alt="me-01">
+                                <img src="" title="me-01" alt="me-01">
                             </div>
                         </div>
                         <div class="col-lg-6 pr-90">
@@ -267,60 +276,17 @@ if( isset($_SESSION['author_id'])){
                         </div>
                     </div>
 					<div class="row">
+                        <?php foreach($services as $service) :?>
 						<div class="col-lg-4 col-md-6">
 							<div class="icon_box_01 wow fadeInLeft" data-wow-delay="0.2s">
-                                <i class="fab fa-react"></i>
-								<h3>Creative Design</h3>
+                                <i class="<?= $service['icon'] ?>"></i>
+								<h3><?= $service['title'] ?></h3>
 								<p>
-									Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum indust.
+                                <?= $service['description'] ?>
 								</p>
 							</div>
 						</div>
-						<div class="col-lg-4 col-md-6">
-							<div class="icon_box_01 wow fadeInLeft" data-wow-delay="0.4s">
-								<i class="fab fa-free-code-camp"></i>
-								<h3>Unlimited Features</h3>
-								<p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum indust.
-								</p>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6">
-							<div class="icon_box_01 wow fadeInLeft" data-wow-delay="0.6s">
-                                <i class="fal fa-desktop"></i>
-								<h3>Ultra Responsive</h3>
-								<p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum indust.
-								</p>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6">
-							<div class="icon_box_01 wow fadeInLeft" data-wow-delay="0.2s">
-                                <i class="fal fa-lightbulb-on"></i>
-								<h3>Creative Ideas</h3>
-								<p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum indust.
-								</p>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6">
-							<div class="icon_box_01 wow fadeInLeft" data-wow-delay="0.4s">
-                                <i class="fal fa-edit"></i>
-								<h3>Easy Customization</h3>
-								<p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum indust.
-								</p>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-6">
-							<div class="icon_box_01 wow fadeInLeft" data-wow-delay="0.6s">
-                                <i class="fal fa-headset"></i>
-								<h3>Supper Support</h3>
-								<p>
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum indust.
-								</p>
-							</div>
-						</div>
+						<?php endforeach;?>
 					</div>
 				</div>
 			</section>
