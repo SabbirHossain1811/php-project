@@ -1,7 +1,7 @@
 
 <?php   
-
 include './config/database.php';
+
 session_start();
 
 if( isset($_SESSION['author_id'])){
@@ -21,6 +21,13 @@ $services_query = "SELECT * FROM services WHERE status='active'";
 $services= mysqli_query($db,$services_query );
 
  // service staer here...!!
+
+// reviews start here....!!
+
+$services_query = "SELECT * FROM reviews WHERE status='active'";
+$reviews= mysqli_query($db,$services_query );
+
+ // reviews start here...!!
 ?>
 
 
@@ -388,57 +395,27 @@ $services= mysqli_query($db,$services_query );
 
 
             <!-- fact-area -->
+            <!-- fact-area -->
             <section class="fact-area">
                 <div class="container">
                     <div class="fact-wrap">
                         <div class="row justify-content-between">
+                        <?php foreach($reviews as $review) :?>
                             <div class="col-xl-2 col-lg-3 col-sm-6">
                                 <div class="fact-box text-center mb-50">
                                     <div class="fact-icon">
-                                        <i class="flaticon-award"></i>
+                                        <i class="<?= $review['icon']?>"></i>
                                     </div>
-                                    <div class="fact-content">
-                                        <h2><span class="count">245</span></h2>
-                                        <span>Feature Item</span>
+                                    <div style="margin-top: -30px;" class="fact-content">
+                                        <span style="font-size: 40px;"><?= $review['title'] ?></span>
+                                        <p><?= $review['description'] ?></p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-2 col-lg-3 col-sm-6">
-                                <div class="fact-box text-center mb-50">
-                                    <div class="fact-icon">
-                                        <i class="flaticon-like"></i>
                                     </div>
-                                    <div class="fact-content">
-                                        <h2><span class="count">345</span></h2>
-                                        <span>Active Products</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-2 col-lg-3 col-sm-6">
-                                <div class="fact-box text-center mb-50">
-                                    <div class="fact-icon">
-                                        <i class="flaticon-event"></i>
-                                    </div>
-                                    <div class="fact-content">
-                                        <h2><span class="count">39</span></h2>
-                                        <span>Year Experience</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-2 col-lg-3 col-sm-6">
-                                <div class="fact-box text-center mb-50">
-                                    <div class="fact-icon">
-                                        <i class="flaticon-woman"></i>
-                                    </div>
-                                    <div class="fact-content">
-                                        <h2><span class="count">3</span>k</h2>
-                                        <span>Our Clients</span>
-                                    </div>
+                                    <?php endforeach;?>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
             </section>
             <!-- fact-area-end -->
 

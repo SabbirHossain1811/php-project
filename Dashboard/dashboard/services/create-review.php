@@ -9,15 +9,15 @@ include '../../public/icon/icon.php';
     <div class="col-10">
         <div class="card">
             <div class="card-header">
-                <h4>Service Add</h4>
+                <h4>Review Add</h4>
             </div>
 
             <div class="card-body">
                 <form action="store.php" method="POST">
-                    <label style="font-weight: bold; " for="exampleInputEmail1" class="form-label my-2">Service Title</label>
+                    <label style="font-weight: bold; " for="exampleInputEmail1" class="form-label my-2">Review Title</label>
                     <input style="font-size: 15px;" type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
-                    <label style="font-weight: bold; " for="exampleInputEmail1" class="form-label my-2">Service description</label>
+                    <label style="font-weight: bold; " for="exampleInputEmail1" class="form-label my-2">Review description</label>
                     <textarea style="font-size: 15px;" type="text" name="description" class="form-control" rows-5></textarea>
 
                     <label style="font-weight: bold; " for="exampleInputEmail1" class="form-label my-2">Icon</label>
@@ -32,7 +32,7 @@ include '../../public/icon/icon.php';
                             <?php endforeach; ?>
                         </div>
                     </div>
-                    <button name="add-btn" type="submit" class="btn btn-primary mt-4"><i class="material-icons">add</i>Create</button>
+                    <button name="ad-btn" type="submit" class="btn btn-primary mt-4"><i class="material-icons">add</i>Create</button>
                 </form>
             </div>
         </div>

@@ -76,4 +76,87 @@
     }
   
  // servise delete here..........
+
+
+
+
+
+
+
+// review database data insart start here......
+  if(isset($_POST['ad-btn'])){
+
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+    $icon = $_POST['icon'];
+
+    if($title && $description && $icon){
+     $query = "INSERT INTO reviews(title,description,icon) VALUES('$title','$description','$icon')";
+     mysqli_query($db,$query);
+     $_SESSION['create-now'] = "Service Insert Seccefully...!!";
+     header('location: service.php');
+    }
+  }
+// database data insart start here......
+
+
+// active deactive start here...........
+  if(isset($_GET['statusid'])){
+   $id = $_GET['statusid'];
+
+   $getquery = "SELECT * FROM reviews WHERE id='$id'";
+   $connect = mysqli_query($db,$getquery);
+   $review = mysqli_fetch_assoc($connect);
+
+
+   if($review['status'] == 'deactive'){
+    $update_query = "UPDATE reviews SET status='active' WHERE id='$id'";
+    mysqli_query($db,$update_query);
+    $_SESSION['update-noww'] = "Reviews update Seccefully...!!";
+    header('location: service.php');
+   }else{
+    $update_query = "UPDATE reviews SET status='deactive' WHERE id='$id'";
+    mysqli_query($db,$update_query);
+    $_SESSION['update-noww'] = " Reviews update Seccefully...!!";
+    header('location: service.php');
+   }
+  }
+
+
+  // active deactive start here...........
+
+
+  // servise update here..........
+  if(isset($_POST['updatee'])){
+  if(isset($_GET['updatee'])){
+    $id = $_GET['updatee'];
+
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+    $icon = $_POST['icon'];
+
+    if($title && $description && $icon){
+     $query_con = "UPDATE reviews SET title='$title',description='$description',icon='$icon' WHERE id='$id'";
+     mysqli_query($db,$query_con);
+     $_SESSION['update'] = "Service update Seccefully...!!";
+     header('location: service.php');
+    }
+  }
+  }
+  // servise update here..........
+
+  // servise delete here..........
+  
+  if(isset($_GET['deletteid'])){
+    $id = $_GET['deletteid'];
+
+   $query= "DELETE FROM reviews WHERE id='$id'";
+   mysqli_query($db,$query);
+   $_SESSION['update'] = "Service update Seccefully...!!";
+  header('location: service.php');
+    }
+  
+ // servise delete here..........
+
+//  Review start here.............
 ?>
