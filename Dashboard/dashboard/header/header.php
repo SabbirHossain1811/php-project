@@ -63,6 +63,8 @@ $user = mysqli_fetch_assoc($conncet);
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+
     <![endif]-->
 </head>
 
@@ -75,7 +77,7 @@ $user = mysqli_fetch_assoc($conncet);
                 <a style="display: flex;" href="#">
                     <span class="activity-indicator"></span>
                     <span class="user-info-text"><?= $_SESSION['author_name'] ?><br><span class="user-state-info"><?= $_SESSION['author_email'] ?></span></span>
-                    
+
                     <?php if ($user['image'] == 'defult imge.png') : ?>
                         <img style="width: 40px;" src="../../public/update/defult/<?= $user['image'] ?>">
                     <?php else : ?>
@@ -89,6 +91,9 @@ $user = mysqli_fetch_assoc($conncet);
                 <li class="sidebar-title">
                     Apps
                 </li>
+                <li>
+                        <a target="_blank" href="../../index.php" class="active"><i class="material-icons-two-tone">visibility</i>Web Site</a>
+                </li>
                 <li class="<?= ($link == 'home.php') ? 'active-page' : '' ?>">
                     <a href="../home/home.php" class="active"><i class="material-icons-two-tone">dashboard</i>Dashboard</a>
                 </li>
@@ -101,6 +106,7 @@ $user = mysqli_fetch_assoc($conncet);
 
                 <li class="<?= ($link == 'service.php') ? 'active-page' : '' ?>">
                     <a href="../services/service.php"><i class="material-icons-two-tone">medical_services</i>Services</a>
+
                 </li>
 
                 <!-- <li>
@@ -320,4 +326,5 @@ $user = mysqli_fetch_assoc($conncet);
         <div class="app-content">
             <div class="content-wrapper">
                 <div class="container">
+
                     <!-- header end -->

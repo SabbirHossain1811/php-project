@@ -542,7 +542,7 @@ $services= mysqli_query($db,$services_query );
                                     <ul>
                                         <li><i class="fas fa-map-marker"></i><span>Address :</span>Event Center park WT 22 New York</li>
                                         <li><i class="fas fa-headphones"></i><span>Phone :</span>+9 125 645 8654</li>
-                                        <li><i class="fas fa-globe-asia"></i><span>e-mail :</span>info@exemple.com</li>
+                                        <li><i class="fas fa-globe-asia"></i><span>e-mail :</span><?= $_SESSION['author_email'] ?></li>
                                     </ul>
                                 </div>
                             </div>

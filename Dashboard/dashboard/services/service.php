@@ -4,22 +4,26 @@ include '../header/header.php';
 
 
 $services_query = "SELECT * FROM services";
- $services= mysqli_query($db,$services_query );
+$services = mysqli_query($db, $services_query);
+
+// $_GET[$service['id']]
 
 ?>
 
 
 <div class="row">
-<div class="col">
+    <div class="col">
         <?php if (isset($_SESSION['create-now'])) : ?>
             <div class="alert alert-custom" role="alert">
                 <div class="custom-alert-icon icon-dark"><i class="material-icons-outlined">done</i></div>
                 <div class="alert-content">
-                    <span style="font-size:20px; color:green" class="alert-title"> <i style="font-size:35px; color:tomato" class="fa-solid fa-person-drowning"></i><?=$_SESSION['create-now'] ?></span>
+                    <span style="font-size:16px; color:green" class="alert-title"> <i style="font-size:35px; color:tomato" class="fa-solid fa-person-drowning"></i><?= $_SESSION['create-now'] ?></span>
                 </div>
             </div>
         <?php endif;
         unset($_SESSION['create-now']); ?>
+
+        
     </div>
 </div>
 
@@ -32,7 +36,7 @@ $services_query = "SELECT * FROM services";
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-end">
                 <h3 style="font-weight: bold;">Services....!!</h3>
-                <a href="create.php" name="add-btn" type="submit" class="btn btn-primary"><i class="material-icons">add</i>Create</a>   
+                <a href="create.php" name="add-btn" type="submit" class="btn btn-primary"><i class="material-icons">add</i>Create</a>
             </div>
             <div class="card-body">
                 <div class="example-content">
@@ -42,36 +46,49 @@ $services_query = "SELECT * FROM services";
                                 <th scope="col">#</th>
                                 <th scope="col">Icon</th>
                                 <th scope="col">Title</th>
+                                <th scope="col">description</th>
                                 <th scope="col">status</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
-                             $num =1;
+                            $num = 1;
                             ?>
-                        
-                            <?php foreach($services as $service): ?>
-                               
-                            <tr style="font-weight: bold;">
-                            
-                                <th scope="row">
-                                <?= $num++;?>
-                                </th>
-                                <td>
-                                <?= $service['icon'] ?>
-                                </td>
-                                <td>
-                                <?= $service['title'] ?>
-                                </td>
-                                <td>
-                               <a style="font-size:14px; padding:7px" class="badge bg-danger text-white " href=""><?= $service['status'] ?></a>
-                                </td>
-                                <td>Deactive</td>
-                            </tr>
-                            <?php endforeach;?>
 
-                            
+                            <?php foreach ($services as $service): ?>
+
+                                <tr style="font-weight: bold;">
+
+                                    <th scope="row">
+                                        <?= $num++; ?>
+                                    </th>
+                                    <td>
+                                        <i class="fa-2x <?= $service['icon'] ?> "></i>
+                                    </td>
+                                    <td>
+                                        <?= $service['title'] ?>
+                                    </td>
+                                    <td>
+                                        <?= $service['description'] ?>
+                                    </td>
+                                    <td>
+                                        <a href="store.php?statusid=<?= $service['id']  ?>" style="font-size:14px; padding:7px" class="<?= ($service['status'] == 'Deactive') ? 'badge bg-danger' : 'badge bg-success' ?> text-white " href=""><?= $service['status'] ?></a>
+                                    </td>
+                                    <td>
+                                        <div class="d-flex justify-content-around align-items-center">
+                                            <a href="edit.php?editid=<?= $service['id'] ?>" class="text-primary fa-2x">
+                                                <i class="fa fa-pencil-square-o"></i>
+                                            </a>
+                                            <a href="store.php?deleteid=<?= $service['id'] ?>" class="text-danger fa-2x">
+                                                <i class="fa fa-trash-o"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+
+
                         </tbody>
                     </table>
                 </div>
