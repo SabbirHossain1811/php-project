@@ -203,7 +203,7 @@ $portfolio = mysqli_query($db,$portfolio_query);
                     <div class="row align-items-center">
                         <div class="col-lg-6">
                             <div class="about-img">
-                                <img src="" title="me-01" alt="me-01">
+                                <img style="width: 600px; height:720px;" src="../Dashboard/public/icon/WhatsApp Image 2024-04-17 at 21.28.43_ceae5799.jpg" title="me-01" alt="me-01">
                             </div>
                         </div>
                         <div class="col-lg-6 pr-90">

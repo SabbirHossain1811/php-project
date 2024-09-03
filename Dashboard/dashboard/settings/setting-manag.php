@@ -11,9 +11,6 @@ if (isset($_POST['btnn'])) {
    if(!$name){
     $_SESSION['update-name'] = "Enter Your Name....!!";
     header('location: settings.php');
-   }elseif(preg_match($name_regex, $name)){
-    $_SESSION['update-name'] = " Please One Later Number...!! ";
-    header('location: settings.php');
    }
    elseif(preg_match($name_regex_char, $name)){
     $_SESSION['update-name'] = " Spacial Character don`t Accept...!! ";

@@ -113,6 +113,10 @@ $user = mysqli_fetch_assoc($conncet);
                     <a href="../portfolio/portfolio.php"><i class="material-icons-two-tone">design_services</i>portfolio</a>
 
                 </li>
+                <li class="<?= ($link == 'about.php') ? 'active-page' : '' ?>">
+                    <a href="../about/about.php"><i class="material-icons-two-tone">medical_services</i>About</a>
+
+                </li>
 
                 <!-- <li>
                         <a href="calendar.html"><i class="material-icons-two-tone">calendar_today</i>Calendar<span class="badge rounded-pill badge-success float-end">14</span></a>

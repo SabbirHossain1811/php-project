@@ -77,7 +77,7 @@ $portfolio = mysqli_fetch_assoc($portfolios);
                                     </td>
                                     <td>
                                     <div class="d-flex justify-content-around align-items-center">
-                                            <a href="edit.php?editid=<?= $portfoli['id'] ?>" class="text-primary fa-2x">
+                                            <a href="p-edit.php?editid=<?= $portfoli['id'] ?>" class="text-primary fa-2x">
                                                 <i class="fa fa-pencil-square-o"></i>
                                             </a>
                                             <a href="store.php?deleteid=<?= $portfoli['id'] ?>" class="text-danger fa-2x">
