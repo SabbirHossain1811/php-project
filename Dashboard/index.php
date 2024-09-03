@@ -27,7 +27,13 @@ $services= mysqli_query($db,$services_query );
 $services_query = "SELECT * FROM reviews WHERE status='active'";
 $reviews= mysqli_query($db,$services_query );
 
- // reviews start here...!!
+// portfolio start here....!!
+$portfolio_query = "SELECT * FROM portfolio";
+$portfolio= mysqli_query($db,$portfolio_query);
+
+// portfolio active start here....!!
+$portfolio_query = "SELECT * FROM portfolio WHERE status='active'";
+$portfolio = mysqli_query($db,$portfolio_query);
 ?>
 
 
@@ -316,78 +322,24 @@ $reviews= mysqli_query($db,$services_query );
                         </div>
                     </div>
                     <div class="row">
+                        <?php foreach($portfolio as $portfoli) :?>
                         <div class="col-lg-4 col-md-6 pitem">
                             <div class="speaker-box">
 								<div class="speaker-thumb">
-									<img src="./public/frontent/img/images/1.jpg" alt="img">
+									<img style="height: 600px ; object-fit:cover;" src="../Dashboard/public/update/portfolios/<?= $portfoli['image']?>" alt="img">
 								</div>
 								<div class="speaker-overlay">
-									<span>Design</span>
-									<h4><a href="portfolio-single.html">Hamble Triangle</a></h4>
-									<a href="portfolio-single.html" class="arrow-btn">More information <span></span></a>
+									<span>
+                                    <?= $portfoli['subtitle'] ?>
+                                    </span>
+									<h4><a href="portfolio-single.html">
+                                    <?= $portfoli['title'] ?>
+                                    </a></h4>
+									<a href="../Dashboard/dashboard/portfolio/singel.php?singelid=<?= $portfoli['id'] ?>" class="arrow-btn">More information <span></span></a>
 								</div>
 							</div>
                         </div>
-                        <div class="col-lg-4 col-md-6 pitem">
-                            <div class="speaker-box">
-								<div class="speaker-thumb">
-									<img src="./public/frontent/img/images/2.jpg" alt="img">
-								</div>
-								<div class="speaker-overlay">
-									<span>Video</span>
-									<h4><a href="portfolio-single.html">Dark Beauty</a></h4>
-									<a href="portfolio-single.html" class="arrow-btn">More information <span></span></a>
-								</div>
-							</div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 pitem">
-                            <div class="speaker-box">
-								<div class="speaker-thumb">
-									<img src="./public/frontent/img/images/3.jpg" alt="img">
-								</div>
-								<div class="speaker-overlay">
-									<span>Audio</span>
-									<h4><a href="portfolio-single.html">Gilroy Limbo.</a></h4>
-									<a href="portfolio-single.html" class="arrow-btn">More information <span></span></a>
-								</div>
-							</div>
-                        </div>
-						<div class="col-lg-4 col-md-6 pitem">
-                            <div class="speaker-box">
-								<div class="speaker-thumb">
-									<img src="./public/frontent/img/images/4.jpg" alt="img">
-								</div>
-								<div class="speaker-overlay">
-									<span>Design</span>
-									<h4><a href="portfolio-single.html">Ipsum which</a></h4>
-									<a href="portfolio-single.html" class="arrow-btn">More information <span></span></a>
-								</div>
-							</div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 pitem">
-                            <div class="speaker-box">
-								<div class="speaker-thumb">
-									<img src="./public/frontent/img/images/5.jpg" alt="img">
-								</div>
-								<div class="speaker-overlay">
-									<span>Creative</span>
-									<h4><a href="portfolio-single.html">Eiusmod tempor</a></h4>
-									<a href="portfolio-single.html" class="arrow-btn">More information <span></span></a>
-								</div>
-							</div>
-                        </div>
-                        <div class="col-lg-4 col-md-6 pitem">
-                            <div class="speaker-box">
-								<div class="speaker-thumb">
-									<img src="./public/frontent/img/images/6.jpg" alt="img">
-								</div>
-								<div class="speaker-overlay">
-									<span>UX/UI</span>
-									<h4><a href="portfolio-single.html">again there</a></h4>
-									<a href="portfolio-single.html" class="arrow-btn">More information <span></span></a>
-								</div>
-							</div>
-                        </div>
+                        <?php endforeach;?>
                     </div>
                 </div>
             </section>
