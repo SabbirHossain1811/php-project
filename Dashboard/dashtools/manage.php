@@ -10,6 +10,7 @@ if (isset($_POST['btn'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $cpassword = $_POST['cpassword'];
+    
     $flag = false;
 
     
@@ -102,10 +103,11 @@ if (isset($_POST['btn'])) {
         //database connect.........
         if($flag == false){
             $encrypt = md5($password);
-            $create_query = "INSERT INTO users (name,email,password) VALUES ('$name' , '$email', '$encrypt')";
+            $create_query = "INSERT INTO users (name,email,password) VALUES ('$name' , '$email','$encrypt')";
              mysqli_query($db, $create_query );
              $_SESSION['register_complete'] = "Registration Complete!";
              $_SESSION['register_name'] = "$name";
+             $_SESSION['register_email'] = "$email";
              $_SESSION['register_email'] = "$email";
              header("location: login.php");
         }

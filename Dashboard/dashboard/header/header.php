@@ -114,7 +114,7 @@ $user = mysqli_fetch_assoc($conncet);
 
                 </li>
                 <li class="<?= ($link == 'about.php') ? 'active-page' : '' ?>">
-                    <a href="../about/about.php"><i class="material-icons-two-tone">medical_services</i>About</a>
+                    <a href="../about/about.php"><i style="font-size: 20px;" class="fa fa-users"></i>About</a>
 
                 </li>
 

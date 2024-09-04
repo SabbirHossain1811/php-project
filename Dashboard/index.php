@@ -34,6 +34,10 @@ $portfolio= mysqli_query($db,$portfolio_query);
 // portfolio active start here....!!
 $portfolio_query = "SELECT * FROM portfolio WHERE status='active'";
 $portfolio = mysqli_query($db,$portfolio_query);
+
+// about active start here....!!
+$about_query = "SELECT * FROM about WHERE status='active'";
+$abouts = mysqli_query($db,$about_query);
 ?>
 
 
@@ -198,12 +202,13 @@ $portfolio = mysqli_query($db,$portfolio_query);
             <!-- banner-area-end -->
 
             <!-- about-area-->
+             <?Php foreach($abouts as $about):?>
             <section id="about" class="about-area primary-bg pt-120 pb-120">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-6">
                             <div class="about-img">
-                                <img style="width: 600px; height:720px;" src="../Dashboard/public/icon/WhatsApp Image 2024-04-17 at 21.28.43_ceae5799.jpg" title="me-01" alt="me-01">
+                                <img style="width: 620px; height:750px;" src="../Dashboard/public/update/aboutt/<?= $about['image']?>" alt="me-01">
                             </div>
                         </div>
                         <div class="col-lg-6 pr-90">
@@ -212,9 +217,7 @@ $portfolio = mysqli_query($db,$portfolio_query);
                                 <h2>About Me</h2>
                             </div>
                             <div class="about-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, sed repudiandae odit deserunt, quas
-                                    quibusdam necessitatibus nesciunt eligendi esse sit non reprehenderit quisquam asperiores maxime
-                                    blanditiis culpa vitae velit. Numquam!</p>
+                                <p><?= $about['description']?></p>
                                 <h3>Education:</h3>
                             </div>
                             <!-- Education Item -->
@@ -279,6 +282,7 @@ $portfolio = mysqli_query($db,$portfolio_query);
                     </div>
                 </div>
             </section>
+            <?php endforeach;?>
             <!-- about-area-end -->
 
             <!-- Services-area -->
