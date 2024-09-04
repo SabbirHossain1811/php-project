@@ -117,6 +117,10 @@ $user = mysqli_fetch_assoc($conncet);
                     <a href="../about/about.php"><i style="font-size: 20px;" class="fa fa-users"></i>About</a>
 
                 </li>
+                <li class="<?= ($link == 'skill.php') ? 'active-page' : '' ?>">
+                    <a  href="../Skills/skill.php"><i style="font-size: 20px;" class="fa fa-gears"></i>Skills</a>
+
+                </li>
 
                 <!-- <li>
                         <a href="calendar.html"><i class="material-icons-two-tone">calendar_today</i>Calendar<span class="badge rounded-pill badge-success float-end">14</span></a>

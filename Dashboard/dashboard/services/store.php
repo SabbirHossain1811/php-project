@@ -4,7 +4,6 @@
 
 // database data insart start here......
   if(isset($_POST['add-btn'])){
-
     $title = $_POST['title'];
     $description = $_POST['description'];
     $icon = $_POST['icon'];
