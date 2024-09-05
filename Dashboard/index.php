@@ -42,6 +42,10 @@ $abouts = mysqli_query($db,$about_query);
 // education active start here....!!
 $education_query = "SELECT * FROM education WHERE status='active'";
 $education = mysqli_query($db,$education_query);
+
+// education active start here....!!
+$quotes_query = "SELECT * FROM quotes WHERE status='active'";
+$quotes = mysqli_query($db,$quotes_query);
 ?>
 
 
@@ -352,32 +356,24 @@ $education = mysqli_query($db,$education_query);
                     <div class="row justify-content-center">
                         <div class="col-xl-9 col-lg-10">
                             <div class="testimonial-active">
+                                <?php foreach($quotes as $quote) :?>
+
                                 <div class="single-testimonial text-center">
                                     <div class="testi-avatar">
-                                        <img src="./public/frontent/img/images/testi_avatar.png" alt="img">
+                                        <img style="width: 90px; height:90px; border-radius:50%;" src="../Dashboard/public/update/quotes/<?= $quote['image'] ?>" alt="img">
                                     </div>
-                                    <div class="testi-content">
-                                        <h4><span>“</span> An event is a message sent by an object to signal the occur rence of an action. The action can causd user interaction such as a button click, or it can result <span>”</span></h4>
-                                        <div class="testi-avatar-info">
-                                            <h5>tonoy jakson</h5>
-                                            <span>head of idea</span>
+                                    <div style="margin-top: -20px;" class="testi-content">
+                                        <h4><span>“</span><?= $quote['description'] ?><span>”</span></h4>
+                                        <div style="margin-top: -10px;" class="testi-avatar-info">
+                                            <h5> <?= $quote['title'] ?></h5>
+                                            <span><?= $quote['subtitle'] ?></span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="single-testimonial text-center">
-                                    <div class="testi-avatar">
-                                        <img src="./public/frontent/img/images/testi_avatar.png" alt="img">
-                                    </div>
-                                    <div class="testi-content">
-                                        <h4><span>“</span> An event is a message sent by an object to signal the occur rence of an action. The action can causd user interaction such as a button click, or it can result <span>”</span></h4>
-                                        <div class="testi-avatar-info">
-                                            <h5>tonoy jakson</h5>
-                                            <span>head of idea</span>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php endforeach;?>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </section>

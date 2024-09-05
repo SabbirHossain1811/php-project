@@ -42,6 +42,7 @@ $education = mysqli_query($db,$education_query);
                                 <th scope="row">
                                 <?= $num++; ?>
                                 </th>
+                                
                                 <td>
                                     <?= $educatio['year']  ?>
                                 </td>

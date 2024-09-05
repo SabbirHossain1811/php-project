@@ -25,7 +25,7 @@ $abouts = mysqli_query($db,$about_query);
     <div class="col-12">
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-end">
-                <h3 style="font-weight: bold;">portfolio....!!</h3>
+                <h3 style="font-weight: bold;">About....!!</h3>
                 <a href="C_about.php" name="add-btn" type="submit" class="btn btn-primary"><i class="material-icons">add</i>Create</a>
             </div>
             <div class="card-body">

@@ -87,8 +87,8 @@ $user = mysqli_fetch_assoc($conncet);
             </div>
         </div>
         <div class="app-menu">
-            <ul class="accordion-menu">
-                <li class="sidebar-title">
+            <ul class="  accordion-menu">
+                <li  class="sidebar-title">
                     Apps
                 </li>
                 <li>
@@ -119,6 +119,10 @@ $user = mysqli_fetch_assoc($conncet);
                 </li>
                 <li class="<?= ($link == 'skill.php') ? 'active-page' : '' ?>">
                     <a  href="../Skills/skill.php"><i style="font-size: 20px;" class="fa fa-gears"></i>Skills</a>
+
+                </li>
+                <li class="<?= ($link == 'quotes.php') ? 'active-page' : '' ?>">
+                    <a  href="../quotes/quotes.php"><i style="font-size: 20px;" class="fa fa-commenting"></i>Quotes</a>
 
                 </li>
 
