@@ -46,6 +46,10 @@ $education = mysqli_query($db,$education_query);
 // education active start here....!!
 $quotes_query = "SELECT * FROM quotes WHERE status='active'";
 $quotes = mysqli_query($db,$quotes_query);
+
+// education active start here....!!
+$contacts_query = "SELECT * FROM contacts WHERE status='active'";
+$contacts = mysqli_query($db,$contacts_query);
 ?>
 
 
@@ -144,21 +148,22 @@ $quotes = mysqli_query($db,$quotes_query);
                         <img src="./public/frontent/img/logo/logo.png" alt="" />
                     </a>
                 </div>
+                <?Php foreach($contacts as $contact):?>
                 <div class="side-info mb-30">
                     <div class="contact-list mb-30">
-                        <h4>Office Address</h4>
-                        <p>123/A, Miranda City Likaoli
-                            Prikano, Dope</p>
+                        <h4>Permanent Address</h4>
+                        <p><?= $contact['addares'] ?></p>
                     </div>
                     <div class="contact-list mb-30">
                         <h4>Phone Number</h4>
-                        <p>+0989 7876 9865 9</p>
+                        <p>+088-0   <?= $contact['number'] ?></p>
                     </div>
                     <div class="contact-list mb-30">
                         <h4>Email Address</h4>
-                        <p>info@example.com</p>
+                        <p><?= $_SESSION['author_email'] ?></p>
                     </div>
                 </div>
+                <?php endforeach;?>
                 <div class="social-icon-right mt-20">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -427,17 +432,19 @@ $quotes = mysqli_query($db,$quotes_query);
                                 <span>information</span>
                                 <h2>Contact Information</h2>
                             </div>
+                            <?Php foreach($contacts as $contact):?>
                             <div class="contact-content">
                                 <p>Event definition is - somthing that happens occurre How evesnt sentence. Synonym when an unknown printer took a galley.</p>
-                                <h5>OFFICE IN <span>NEW YORK</span></h5>
+                                <h5>NATIONOLILY <span>BANGLADESHi</span></h5>
                                 <div class="contact-list">
                                     <ul>
-                                        <li><i class="fas fa-map-marker"></i><span>Address :</span>Event Center park WT 22 New York</li>
-                                        <li><i class="fas fa-headphones"></i><span>Phone :</span>+9 125 645 8654</li>
+                                        <li><i class="fas fa-map-marker"></i><span>Address :</span> <?= $contact['addares'] ?></li>
+                                        <li><i class="fas fa-headphones"></i><span>Phone :</span>+088-0 <?= $contact['number'] ?></li>
                                         <li><i class="fas fa-globe-asia"></i><span>e-mail :</span><?= $_SESSION['author_email'] ?></li>
                                     </ul>
                                 </div>
                             </div>
+                            <?php endforeach;?>
                         </div>
                         <div class="col-lg-6">
                             <div class="contact-form">

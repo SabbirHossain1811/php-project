@@ -125,6 +125,9 @@ $user = mysqli_fetch_assoc($conncet);
                     <a  href="../quotes/quotes.php"><i style="font-size: 20px;" class="fa fa-commenting"></i>Quotes</a>
 
                 </li>
+                <li class="<?= ($link == 'contact.php') ? 'active-page' : '' ?>">
+                    <a  href="../contact/contact.php"><i style="font-size: 20px;" class="fa fa-address-book"></i>Contacts</a>
+                </li>
 
                 <!-- <li>
                         <a href="calendar.html"><i class="material-icons-two-tone">calendar_today</i>Calendar<span class="badge rounded-pill badge-success float-end">14</span></a>
