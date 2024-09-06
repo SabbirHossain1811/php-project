@@ -47,9 +47,13 @@ $education = mysqli_query($db,$education_query);
 $quotes_query = "SELECT * FROM quotes WHERE status='active'";
 $quotes = mysqli_query($db,$quotes_query);
 
-// education active start here....!!
+// contacts active start here....!!
 $contacts_query = "SELECT * FROM contacts WHERE status='active'";
 $contacts = mysqli_query($db,$contacts_query);
+
+// brands active start here....!!
+$brands_query = "SELECT * FROM brands WHERE status='active'";
+$brands = mysqli_query($db,$brands_query);
 ?>
 
 
@@ -61,7 +65,7 @@ $contacts = mysqli_query($db,$contacts_query);
 <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Kufa - Personal Portfolio HTML5 Template</title>
+        <title>Personal Portfolio</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -194,10 +198,10 @@ $contacts = mysqli_query($db,$contacts_query);
                                 <p class="wow fadeInUp" data-wow-delay="0.6s">I'm Will Smith, professional web developer with long time experience in this field​.</p>
                                 <div class="banner-social wow fadeInUp" data-wow-delay="0.8s">
                                     <ul>
-                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="#"><i class="fab fa-pinterest"></i></a></li>
+                                        <li><a href="https://www.facebook.com/profile.php?id=100041356129062&mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="https://www.instagram.com/sabbir1811123?igsh=cTRjeXZ5MDZ0aW93"><i class="fab fa-linkedin"></i></a></li>
+                                        <li><a href="www.linkedin.com/in/sabbir-hossain-102429327"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="https://github.com/SabbirHossain1811"><i class="fab fa-github"></i></a></li>
                                     </ul>
                                 </div>
                                 <a href="#" class="btn wow fadeInUp" data-wow-delay="1s">SEE PORTFOLIOS</a>
@@ -387,38 +391,40 @@ $contacts = mysqli_query($db,$contacts_query);
             <!-- brand-area -->
             <div class="barnd-area pt-100 pb-100">
                 <div class="container">
+                    <?php foreach($brands as $brand) :?>
                     <div class="row brand-active">
                         <div class="col-xl-2">
                             <div class="single-brand">
-                                <img src="./public/frontent/img/brand/brand_img01.png" alt="img">
+                            <img style="width: 80px; height:80px;" src="../Dashboard/public/update/brand/<?= $brand['image'] ?>" alt="img">
                             </div>
                         </div>
                         <div class="col-xl-2">
                             <div class="single-brand">
-                                <img src="./public/frontent/img/brand/brand_img02.png" alt="img">
+                            <img style="width: 80px; height:80px;" src="../Dashboard/public/update/brand/<?= $brand['image'] ?>" alt="img">
                             </div>
                         </div>
                         <div class="col-xl-2">
                             <div class="single-brand">
-                                <img src="./public/frontent/img/brand/brand_img03.png" alt="img">
+                            <img style="width: 80px; height:80px;" src="../Dashboard/public/update/brand/<?= $brand['image'] ?>" alt="img">
                             </div>
                         </div>
                         <div class="col-xl-2">
                             <div class="single-brand">
-                                <img src="./public/frontent/img/brand/brand_img04.png" alt="img">
+                            <img style="width: 80px; height:80px;" src="../Dashboard/public/update/brand/<?= $brand['image'] ?>" alt="img">
                             </div>
                         </div>
                         <div class="col-xl-2">
                             <div class="single-brand">
-                                <img src="./public/frontent/img/brand/brand_img05.png" alt="img">
+                            <img style="width: 80px; height:80px;" src="../Dashboard/public/update/brand/<?= $brand['image'] ?>" alt="img">
                             </div>
                         </div>
                         <div class="col-xl-2">
                             <div class="single-brand">
-                                <img src="./public/frontent/img/brand/brand_img03.png" alt="img">
+                            <img style="width: 80px; height:80px;" src="../Dashboard/public/update/brand/<?= $brand['image'] ?>" alt="img">
                             </div>
                         </div>
                     </div>
+                    <?php endforeach;?>
                 </div>
             </div>
             <!-- brand-area-end -->
@@ -465,7 +471,7 @@ $contacts = mysqli_query($db,$contacts_query);
         <!-- main-area-end -->
 
         <!-- footer -->
-        <footer>
+        <footer>    
             <div class="copyright-wrap">
                 <div class="container">
                     <div class="row align-items-center">

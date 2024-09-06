@@ -73,7 +73,7 @@ $user = mysqli_fetch_assoc($conncet);
 
         <div class="logo">
             <!-- <a href="index.html" class="logo-icon"><span class="logo-text">Neptune</span></a> -->
-            <div class="sidebar-user-switcher user-activity-online">
+            <div class="sidebar-user-switcher user-activity-online ">
                 <a style="display: flex;" href="#">
                     <span class="activity-indicator"></span>
                     <span class="user-info-text"><?= $_SESSION['author_name'] ?><br><span class="user-state-info"><?= $_SESSION['author_email'] ?></span></span>
@@ -87,46 +87,47 @@ $user = mysqli_fetch_assoc($conncet);
             </div>
         </div>
         <div class="app-menu">
-            <ul class="  accordion-menu">
-                <li  class="sidebar-title">
-                    Apps
+            <ul style="display: flex; flex-direction:column; gap:8px;" class="accordion-menu">
+                <li class="sidebar-title">
+                    Apps..
+                    </li>
+                <li style="background-color: rgb(243, 242, 242); width:280px;border-radius: 10px;">
+                        <a style="font-size:16px;" target="_blank" href="../../index.php" class="active"><i class="material-icons-two-tone">visibility</i>Web Site..</a>
                 </li>
-                <li>
-                        <a target="_blank" href="../../index.php" class="active"><i class="material-icons-two-tone">visibility</i>Web Site</a>
+                <li style="background-color: rgb(243, 242, 242); width:280px;border-radius: 10px;" class="<?= ($link == 'home.php') ? 'active-page' : '' ?>">
+                    <a style="font-size:16px;" href="../home/home.php" class="active"><i class="material-icons-two-tone">dashboard</i>Dashboard..</a>
                 </li>
-                <li class="<?= ($link == 'home.php') ? 'active-page' : '' ?>">
-                    <a href="../home/home.php" class="active"><i class="material-icons-two-tone">dashboard</i>Dashboard</a>
-                </li>
-                <!-- <li>
-                        <a href="mailbox.html"><i class="material-icons-two-tone">inbox</i>Mailbox<span class="badge rounded-pill badge-danger float-end">87</span></a>
-                    </li> -->
-                <li class="<?= ($link == 'settings.php') ? 'active-page' : '' ?>">
-                    <a href="../settings/settings.php"><i class="material-icons-two-tone">settings</i>Settings</a>
+               
+                <li  style="background-color: rgb(243, 242, 242); width:280px;border-radius: 10px;"  class="<?= ($link == 'settings.php') ? 'active-page' : '' ?>">
+                    <a style="font-size:16px;" href="../settings/settings.php"><i class="material-icons-two-tone">settings</i>Settings..</a>
                 </li>
 
-                <li class="<?= ($link == 'service.php') ? 'active-page' : '' ?>">
-                    <a href="../services/service.php"><i class="material-icons-two-tone">medical_services</i>Services</a>
-
+                <li  style="background-color: rgb(243, 242, 242); width:280px;border-radius: 10px;" class="<?= ($link == 'service.php') ? 'active-page' : '' ?>">
+                    <a style="font-size:16px;" href="../services/service.php"><i class="material-icons-two-tone">medical_services</i>Services..</a>
                 </li>
 
-                <li class="<?= ($link == 'portfolio.php') ? 'active-page' : '' ?>">
-                    <a href="../portfolio/portfolio.php"><i class="material-icons-two-tone">design_services</i>portfolio</a>
-
+                <li  style="background-color: rgb(243, 242, 242); width:280px;border-radius: 10px;" class="<?= ($link == 'portfolio.php') ? 'active-page' : '' ?>">
+                    <a style="font-size:16px;" href="../portfolio/portfolio.php"><i class="material-icons-two-tone">design_services</i>portfolio..</a>
                 </li>
-                <li class="<?= ($link == 'about.php') ? 'active-page' : '' ?>">
-                    <a href="../about/about.php"><i style="font-size: 20px;" class="fa fa-users"></i>About</a>
 
+                <li  style="background-color: rgb(243, 242, 242); width:280px;border-radius: 10px;" class="<?= ($link == 'about.php') ? 'active-page' : '' ?>">
+                    <a style="font-size:16px;" href="../about/about.php"><i style="font-size: 20px;" class="fa fa-users"></i>About..</a>
                 </li>
-                <li class="<?= ($link == 'skill.php') ? 'active-page' : '' ?>">
-                    <a  href="../Skills/skill.php"><i style="font-size: 20px;" class="fa fa-gears"></i>Skills</a>
 
+                <li  style="background-color: rgb(243, 242, 242); width:280px;border-radius: 10px;" class="<?= ($link == 'skill.php') ? 'active-page' : '' ?>">
+                    <a style="font-size:16px;" href="../Skills/skill.php"><i style="font-size: 20px;" class="fa fa-gears"></i>Skills..</a>
                 </li>
-                <li class="<?= ($link == 'quotes.php') ? 'active-page' : '' ?>">
-                    <a  href="../quotes/quotes.php"><i style="font-size: 20px;" class="fa fa-commenting"></i>Quotes</a>
 
+                <li style="background-color: rgb(243, 242, 242); width:280px;border-radius: 10px;" class="<?= ($link == 'quotes.php') ? 'active-page' : '' ?>">
+                    <a style="font-size:16px;" href="../quotes/quotes.php"><i style="font-size: 20px;" class="fa fa-commenting"></i>Quotes..</a>
                 </li>
-                <li class="<?= ($link == 'contact.php') ? 'active-page' : '' ?>">
-                    <a  href="../contact/contact.php"><i style="font-size: 20px;" class="fa fa-address-book"></i>Contacts</a>
+
+                <li  style="background-color: rgb(243, 242, 242); width:280px;border-radius: 10px;" class="<?= ($link == 'contact.php') ? 'active-page' : '' ?>">
+                    <a style="font-size:16px;" href="../contact/contact.php"><i style="font-size: 20px;" class="fa fa-address-book"></i>Contacts..</a>
+                </li>
+
+                <li  style="background-color: rgb(243, 242, 242); width:280px;border-radius: 10px;" class="<?= ($link == 'brand.php') ? 'active-page' : '' ?>">
+                    <a style="font-size:16px;" href="../brand/brand.php"><i style="font-size: 20px;" class="fa fa-recycle"></i>brand..</a>
                 </li>
 
                 <!-- <li>
