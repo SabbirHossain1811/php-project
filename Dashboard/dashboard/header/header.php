@@ -87,47 +87,43 @@ $user = mysqli_fetch_assoc($conncet);
             </div>
         </div>
         <div class="app-menu">
-            <ul style="display: flex; flex-direction:column; gap:8px;" class="accordion-menu">
+            <ul style="display: flex; flex-direction:column; gap:5px;" class="accordion-menu">
                 <li class="sidebar-title">
                     Apps..
                     </li>
-                <li style="background-color: rgb(243, 242, 242); width:280px;border-radius: 10px;">
-                        <a style="font-size:16px;" target="_blank" href="../../index.php" class="active"><i class="material-icons-two-tone">visibility</i>Web Site..</a>
+                <li style=" background-color: rgb(250, 250, 250); width:280px;border-radius: 10px;">
+                        <a target="_blank" href="../../index.php" class="active"><i class="material-icons-two-tone">visibility</i>Web Site</a>
                 </li>
-                <li style="background-color: rgb(243, 242, 242); width:280px;border-radius: 10px;" class="<?= ($link == 'home.php') ? 'active-page' : '' ?>">
-                    <a style="font-size:16px;" href="../home/home.php" class="active"><i class="material-icons-two-tone">dashboard</i>Dashboard..</a>
+                <li style=" background-color: rgb(250, 250, 250); width:280px;border-radius: 10px;" class="<?= ($link == 'home.php') ? 'active-page' : '' ?>">
+                    <a href="../home/home.php" class="active"><i class="material-icons-two-tone">dashboard</i>Dashboard</a>
                 </li>
                
-                <li  style="background-color: rgb(243, 242, 242); width:280px;border-radius: 10px;"  class="<?= ($link == 'settings.php') ? 'active-page' : '' ?>">
-                    <a style="font-size:16px;" href="../settings/settings.php"><i class="material-icons-two-tone">settings</i>Settings..</a>
+                <li  style="background-color: rgb(250, 250, 250); width:280px;border-radius: 10px;"  class="<?= ($link == 'settings.php') ? 'active-page' : '' ?>">
+                    <a href="../settings/settings.php"><i class="material-icons-two-tone">settings</i>Settings</a>
                 </li>
 
-                <li  style="background-color: rgb(243, 242, 242); width:280px;border-radius: 10px;" class="<?= ($link == 'service.php') ? 'active-page' : '' ?>">
-                    <a style="font-size:16px;" href="../services/service.php"><i class="material-icons-two-tone">medical_services</i>Services..</a>
+                <li  style="background-color: rgb(250, 250, 250); width:280px;border-radius: 10px;" class="<?= ($link == 'service.php') ? 'active-page' : '' ?>">
+                    <a href="../services/service.php"><i class="material-icons-two-tone">medical_services</i>Services</a>
                 </li>
 
-                <li  style="background-color: rgb(243, 242, 242); width:280px;border-radius: 10px;" class="<?= ($link == 'portfolio.php') ? 'active-page' : '' ?>">
-                    <a style="font-size:16px;" href="../portfolio/portfolio.php"><i class="material-icons-two-tone">design_services</i>portfolio..</a>
+                <li  style="background-color: rgb(250, 250, 250); width:280px;border-radius: 10px;" class="<?= ($link == 'portfolio.php') ? 'active-page' : '' ?>">
+                    <a href="../portfolio/portfolio.php"><i class="material-icons-two-tone">design_services</i>portfolio</a>
                 </li>
 
-                <li  style="background-color: rgb(243, 242, 242); width:280px;border-radius: 10px;" class="<?= ($link == 'about.php') ? 'active-page' : '' ?>">
-                    <a style="font-size:16px;" href="../about/about.php"><i style="font-size: 20px;" class="fa fa-users"></i>About..</a>
+                <li  style="background-color: rgb(250, 250, 250); width:280px; border-radius: 10px;" class="<?= ($link == 'about.php') ? 'active-page' : '' ?>">
+                    <a href="../about/about.php"><i style="font-size: 20px;" class="fa fa-users"></i>About</a>
                 </li>
 
-                <li  style="background-color: rgb(243, 242, 242); width:280px;border-radius: 10px;" class="<?= ($link == 'skill.php') ? 'active-page' : '' ?>">
-                    <a style="font-size:16px;" href="../Skills/skill.php"><i style="font-size: 20px;" class="fa fa-gears"></i>Skills..</a>
+                <li  style="background-color: rgb(250, 250, 250); width:280px;border-radius: 10px;" class="<?= ($link == 'skill.php') ? 'active-page' : '' ?>">
+                    <a href="../Skills/skill.php"><i style="font-size: 20px;" class="fa fa-gears"></i>Skills</a>
                 </li>
 
-                <li style="background-color: rgb(243, 242, 242); width:280px;border-radius: 10px;" class="<?= ($link == 'quotes.php') ? 'active-page' : '' ?>">
-                    <a style="font-size:16px;" href="../quotes/quotes.php"><i style="font-size: 20px;" class="fa fa-commenting"></i>Quotes..</a>
+                <li style="background-color: rgb(250, 250, 250); width:280px;border-radius: 10px;" class="<?= ($link == 'quotes.php') ? 'active-page' : '' ?>">
+                    <a href="../quotes/quotes.php"><i style="font-size: 20px;" class="fa fa-commenting"></i>Quotes</a>
                 </li>
 
-                <li  style="background-color: rgb(243, 242, 242); width:280px;border-radius: 10px;" class="<?= ($link == 'contact.php') ? 'active-page' : '' ?>">
-                    <a style="font-size:16px;" href="../contact/contact.php"><i style="font-size: 20px;" class="fa fa-address-book"></i>Contacts..</a>
-                </li>
-
-                <li  style="background-color: rgb(243, 242, 242); width:280px;border-radius: 10px;" class="<?= ($link == 'brand.php') ? 'active-page' : '' ?>">
-                    <a style="font-size:16px;" href="../brand/brand.php"><i style="font-size: 20px;" class="fa fa-recycle"></i>brand..</a>
+                <li  style="background-color: rgb(250, 250, 250); width:280px;border-radius: 10px;" class="<?= ($link == 'contact.php') ? 'active-page' : '' ?>">
+                    <a href="../contact/contact.php"><i style="font-size: 20px;" class="fa fa-address-book"></i>Contacts</a>
                 </li>
 
                 <!-- <li>
@@ -216,7 +212,6 @@ $user = mysqli_fetch_assoc($conncet);
                                     <li>
                                         <a class="dropdown-item" href="#">
                                             <h5 class="dropdown-item-title">
-                                                Neptune Android
                                                 <span class="badge badge-info">dev</span>
                                                 <span class="hidden-helper-text">switch<i class="material-icons">keyboard_arrow_right</i></span>
                                             </h5>

@@ -28,13 +28,11 @@ if (isset($_POST['btnn'])) {
 
 }
 
+   //email start here.........//
 if (isset($_POST['emailbtnn'])) {
 
-   //email start here.........//
-   
+
    $email = $_POST['email'];
-   
-   
    
    if($email){
       $id = $_SESSION['author_id'] ;

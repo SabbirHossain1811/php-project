@@ -51,9 +51,6 @@ $quotes = mysqli_query($db,$quotes_query);
 $contacts_query = "SELECT * FROM contacts WHERE status='active'";
 $contacts = mysqli_query($db,$contacts_query);
 
-// brands active start here....!!
-$brands_query = "SELECT * FROM brands WHERE status='active'";
-$brands = mysqli_query($db,$brands_query);
 ?>
 
 
@@ -209,7 +206,7 @@ $brands = mysqli_query($db,$brands_query);
                         </div>
                         <div class="col-xl-5 col-lg-6 d-none d-lg-block">
                             <div class="banner-img text-right">
-                                <img style="width: 900px;" src="../Dashboard/public/update/profile/15-Idona Brewer11-27-08-2024.png" >
+                                <img style="width: 900px; margin-left:-50px" src="../Dashboard/public/update/profile/15-Idona Brewer11-27-08-2024.png" >
                             </div>
                         </div>
                     </div>
@@ -391,40 +388,15 @@ $brands = mysqli_query($db,$brands_query);
             <!-- brand-area -->
             <div class="barnd-area pt-100 pb-100">
                 <div class="container">
-                    <?php foreach($brands as $brand) :?>
                     <div class="row brand-active">
                         <div class="col-xl-2">
+                            <?php foreach($brands as $brand) :?>
                             <div class="single-brand">
                             <img style="width: 80px; height:80px;" src="../Dashboard/public/update/brand/<?= $brand['image'] ?>" alt="img">
                             </div>
                         </div>
-                        <div class="col-xl-2">
-                            <div class="single-brand">
-                            <img style="width: 80px; height:80px;" src="../Dashboard/public/update/brand/<?= $brand['image'] ?>" alt="img">
-                            </div>
-                        </div>
-                        <div class="col-xl-2">
-                            <div class="single-brand">
-                            <img style="width: 80px; height:80px;" src="../Dashboard/public/update/brand/<?= $brand['image'] ?>" alt="img">
-                            </div>
-                        </div>
-                        <div class="col-xl-2">
-                            <div class="single-brand">
-                            <img style="width: 80px; height:80px;" src="../Dashboard/public/update/brand/<?= $brand['image'] ?>" alt="img">
-                            </div>
-                        </div>
-                        <div class="col-xl-2">
-                            <div class="single-brand">
-                            <img style="width: 80px; height:80px;" src="../Dashboard/public/update/brand/<?= $brand['image'] ?>" alt="img">
-                            </div>
-                        </div>
-                        <div class="col-xl-2">
-                            <div class="single-brand">
-                            <img style="width: 80px; height:80px;" src="../Dashboard/public/update/brand/<?= $brand['image'] ?>" alt="img">
-                            </div>
-                        </div>
+                        <?php endforeach;?>
                     </div>
-                    <?php endforeach;?>
                 </div>
             </div>
             <!-- brand-area-end -->
@@ -454,11 +426,11 @@ $brands = mysqli_query($db,$brands_query);
                         </div>
                         <div class="col-lg-6">
                             <div class="contact-form">
-                                <form action="#">
-                                    <input type="text" placeholder="your name *">
-                                    <input type="email" placeholder="your email *">
-                                    <textarea name="message" id="message" placeholder="your message *"></textarea>
-                                    <button class="btn">SEND</button>
+                                <form action="./dashboard/email/action.php" method="POST">
+                                    <input type="text" placeholder="your name *" name="name">
+                                    <input type="email" placeholder="your email *" name="email" style="text-transform: lowercase !important;">
+                                    <textarea name="body" id="message" placeholder="your message *"></textarea>
+                                    <button class="btn" name="sent_email" type="submit">SEND</button>
                                 </form>
                             </div>
                         </div>
