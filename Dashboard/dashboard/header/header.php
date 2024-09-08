@@ -52,6 +52,7 @@ $user = mysqli_fetch_assoc($conncet);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Theme Styles -->
+    <link rel="shortcut icon" type="image/x-icon" href="../../public/update/defult/sabbir (1).png">
     <link href="../../public/dashCss/css/main.min.css" rel="stylesheet">
     <link href="../../public/dashCss/css/custom.css" rel="stylesheet">
 
@@ -230,109 +231,12 @@ $user = mysqli_fetch_assoc($conncet);
                         <ul class="navbar-nav">
                             <!-- Dashboard LogOut here...........!! -->
                             <li class="nav-item hidden-on-mobile">
-                                <a style="font-size:14px; font:bold; display:flex; gap:11px; width:91px; color:white;     background-color:#0d4efd; border-radius:10px" class="nav-link btn " href="../logout/logout.php">LogOut <i style="margin-top: 2px;" class="fa-solid fa-person-walking-luggage"></i></a>
+                            <a style="display:flex; gap:10px; background-color:#8cc090; " class="nav-link btn  btn-sm text-white fa-solid" href="../logout/logout.php">LogOut<i style="margin-top: 4px;" class="fa-solid fa-person-walking-luggage"></i></a>
+
 
                             </li>
                             <!-- Dashboard LogOut here...........!! -->
 
-
-
-
-
-
-
-
-
-                            <!-- <li class="nav-item hidden-on-mobile">
-                                    <a class="nav-link" href="#">Reports</a>
-                                </li>
-                                <li class="nav-item hidden-on-mobile">
-                                    <a class="nav-link" href="#">Projects</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link toggle-search" href="#"><i class="material-icons">search</i></a>
-                                </li> -->
-                            <!-- <li class="nav-item hidden-on-mobile">
-                                    <a class="nav-link language-dropdown-toggle" href="#" id="languageDropDown" data-bs-toggle="dropdown"><img src="../../../public/backend/assets/images/flags/us.png" alt=""></a>
-                                        <ul class="dropdown-menu dropdown-menu-end language-dropdown" aria-labelledby="languageDropDown">
-                                            <li><a class="dropdown-item" href="#"><img src="../../../public/backend/assets/images/flags/germany.png" alt="">German</a></li>
-                                            <li><a class="dropdown-item" href="#"><img src="../../../public/backend/assets/images/flags/italy.png" alt="">Italian</a></li>
-                                            <li><a class="dropdown-item" href="#"><img src="../../../public/backend/assets/images/flags/china.png" alt="">Chinese</a></li>
-                                        </ul>
-                                </li>
-                                <li class="nav-item hidden-on-mobile">
-                                    <a class="nav-link nav-notifications-toggle" id="notificationsDropDown" href="#" data-bs-toggle="dropdown">4</a>
-                                    <div class="dropdown-menu dropdown-menu-end notifications-dropdown" aria-labelledby="notificationsDropDown">
-                                        <h6 class="dropdown-header">Notifications</h6>
-                                        <div class="notifications-dropdown-list">
-                                            <a href="#">
-                                                <div class="notifications-dropdown-item">
-                                                    <div class="notifications-dropdown-item-image">
-                                                        <span class="notifications-badge bg-info text-white">
-                                                            <i class="material-icons-outlined">campaign</i>
-                                                        </span>
-                                                    </div>
-                                                    <div class="notifications-dropdown-item-text">
-                                                        <p class="bold-notifications-text">Donec tempus nisi sed erat vestibulum, eu suscipit ex laoreet</p>
-                                                        <small>19:00</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="#">
-                                                <div class="notifications-dropdown-item">
-                                                    <div class="notifications-dropdown-item-image">
-                                                        <span class="notifications-badge bg-danger text-white">
-                                                            <i class="material-icons-outlined">bolt</i>
-                                                        </span>
-                                                    </div>
-                                                    <div class="notifications-dropdown-item-text">
-                                                        <p class="bold-notifications-text">Quisque ligula dui, tincidunt nec pharetra eu, fringilla quis mauris</p>
-                                                        <small>18:00</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="#">
-                                                <div class="notifications-dropdown-item">
-                                                    <div class="notifications-dropdown-item-image">
-                                                        <span class="notifications-badge bg-success text-white">
-                                                            <i class="material-icons-outlined">alternate_email</i>
-                                                        </span>
-                                                    </div>
-                                                    <div class="notifications-dropdown-item-text">
-                                                        <p>Nulla id libero mattis justo euismod congue in et metus</p>
-                                                        <small>yesterday</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="#">
-                                                <div class="notifications-dropdown-item">
-                                                    <div class="notifications-dropdown-item-image">
-                                                        <span class="notifications-badge">
-                                                            <img src="../../../public/backend/assets/images/avatars/avatar.png" alt="">
-                                                        </span>
-                                                    </div>
-                                                    <div class="notifications-dropdown-item-text">
-                                                        <p>Praesent sodales lobortis velit ac pellentesque</p>
-                                                        <small>yesterday</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                            <a href="#">
-                                                <div class="notifications-dropdown-item">
-                                                    <div class="notifications-dropdown-item-image">
-                                                        <span class="notifications-badge">
-                                                            <img src="../../../public/backend/assets/images/avatars/avatar.png" alt="">
-                                                        </span>
-                                                    </div>
-                                                    <div class="notifications-dropdown-item-text">
-                                                        <p>Praesent lacinia ante eget tristique mattis. Nam sollicitudin velit sit amet auctor porta</p>
-                                                        <small>yesterday</small>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </li> -->
 
                         </ul>
                     </div>

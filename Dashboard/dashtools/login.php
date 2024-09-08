@@ -56,7 +56,7 @@ if(isset( $_SESSION['author_id'])){
         </div>
         <div class="app-auth-container">
             <div class="logo">
-                <a href="index.html">Neptune</a>
+                <a href="index.html">LOGIN..</a>
             </div>
             <p class="auth-description">Please sign-in to your account and continue to the dashboard.<br>Don't have an account? <a href="registor.php">Sign Up</a></p>
 

@@ -66,7 +66,7 @@ $contacts = mysqli_query($db,$contacts_query);
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="shortcut icon" type="image/x-icon" href="./public/frontent/img/favicon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="./public/update/defult/sabbir (1).png">
         <!-- Place favicon.ico in the root directory -->
 
 		<!-- CSS here -->
@@ -104,8 +104,8 @@ $contacts = mysqli_query($db,$contacts_query);
                         <div class="col-xl-12">
                             <div class="main-menu">
                                 <nav class="navbar navbar-expand-lg">
-                                    <a href="index.html" class="navbar-brand logo-sticky-none"><img src="./public/frontent/img/logo/logo.png" alt="Logo"></a>
-                                    <a href="index.html" class="navbar-brand s-logo-none"><img src="./public/frontent/img/logo/s_logo.png" alt="Logo"></a>
+                                    <a href="index.html" class="navbar-brand logo-sticky-none"> <h1 style="color: #8cc090;">SABBIR</h1></a>
+                                    <a href="index.html" class="navbar-brand s-logo-none"><h1 style="color: #8cc090;">SABBIR</h1></a>
                                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                                         data-target="#navbarNav">
                                         <span class="navbar-icon"></span>
@@ -121,7 +121,7 @@ $contacts = mysqli_query($db,$contacts_query);
                                             <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
 
                                             <?php if(isset($_SESSION['author_id'])) :?>
-                                            <li class="nav-item"><a class="nav-link" href="../Dashboard/dashboard/header/header.php">Dashboard</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="../Dashboard/dashboard/home/home.php">Dashboard</a></li>
                                             <?php else: ?>
                                                 <li class="nav-item"><a class="nav-link" href="./dashtools/login.php">Login/Register</a></li>
                                             <?php endif; ?>
@@ -192,7 +192,7 @@ $contacts = mysqli_query($db,$contacts_query);
                                 <?php else : ?>
                                 <h2 class="wow fadeInUp" data-wow-delay="0.4s">I am <?= $user['name']?></h2>
                                 <?php endif;?>
-                                <p class="wow fadeInUp" data-wow-delay="0.6s">I'm Will Smith, professional web developer with long time experience in this field​.</p>
+                                <p class="wow fadeInUp" data-wow-delay="0.6s">HI ! i am Sabbir Hossain. I love Programing i like to learn and know new things. My dream is to work with Microsoft company.</p>
                                 <div class="banner-social wow fadeInUp" data-wow-delay="0.8s">
                                     <ul>
                                         <li><a href="https://www.facebook.com/profile.php?id=100041356129062&mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a></li>
@@ -222,7 +222,7 @@ $contacts = mysqli_query($db,$contacts_query);
                     <div class="row align-items-center">
                         <div class="col-lg-6">
                             <div class="about-img">
-                                <img style="width: 620px; height:750px;" src="../Dashboard/public/update/aboutt/<?= $about['image']?>" alt="me-01">
+                                <img style="width: 600px; height:800px;" src="../Dashboard/public/update/aboutt/<?= $about['image']?>" alt="me-01">
                             </div>
                         </div>
                         <div class="col-lg-6 pr-90">
@@ -232,7 +232,15 @@ $contacts = mysqli_query($db,$contacts_query);
                             </div>
                             <div class="about-content">
                                 <p><?= $about['description']?></p>
-                                <h3>Education:</h3>
+                                <span>
+                                    <p> HTML : HyperText Markup Language. <br>
+                                        CSS : Cascading Style Sheets <br>
+                                        JS : JAVASCRIPT <br>
+                                        PHP :  Hypertext Preprocessor.
+                                    </p>
+                                
+                                </span>
+                                <h3>SKILLS :</h3>
                             </div>
                             <!-- Education Item -->
                             <?php foreach($education as $educatio) : ?>
@@ -240,7 +248,7 @@ $contacts = mysqli_query($db,$contacts_query);
                                 <div class="year"><?= $educatio['year'] ?></div>
                                 <div class="line"></div>
                                 <div class="location">
-                                    <span><?= $educatio['description'] ?></span>
+                                    <span "><?= $educatio['description'] ?></span>
                                     <div class="progressWrapper">
                                         <div class="progress">
                                             <div class="progress-bar wow slideInLefts" data-wow-delay="0.2s" data-wow-duration="2s" role="progressbar" style="width: 85%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
@@ -337,7 +345,7 @@ $contacts = mysqli_query($db,$contacts_query);
                                     </div>
                                     <div style="margin-top: -30px;" class="fact-content">
                                         <span style="font-size: 40px;"><?= $review['title'] ?></span>
-                                        <p><?= $review['description'] ?></p>
+                                        <p style="font-weight: bold; font-size:16px;"><?= $review['description'] ?></p>
                                     </div>
                                 </div>
                                     </div>
@@ -366,7 +374,7 @@ $contacts = mysqli_query($db,$contacts_query);
 
                                 <div class="single-testimonial text-center">
                                     <div class="testi-avatar">
-                                        <img style="width: 90px; height:90px; border-radius:50%;" src="../Dashboard/public/update/quotes/<?= $quote['image'] ?>" alt="img">
+                                        <img style="width: 100px; height:100px; border-radius:50%;" src="../Dashboard/public/update/quotes/<?= $quote['image'] ?>" alt="img">
                                     </div>
                                     <div style="margin-top: -20px;" class="testi-content">
                                         <h4><span>“</span><?= $quote['description'] ?><span>”</span></h4>
@@ -390,12 +398,36 @@ $contacts = mysqli_query($db,$contacts_query);
                 <div class="container">
                     <div class="row brand-active">
                         <div class="col-xl-2">
-                            <?php foreach($brands as $brand) :?>
                             <div class="single-brand">
-                            <img style="width: 80px; height:80px;" src="../Dashboard/public/update/brand/<?= $brand['image'] ?>" alt="img">
+                                <img src="../Dashboard/public/update/brand/brand_img01.png" alt="img">
                             </div>
                         </div>
-                        <?php endforeach;?>
+                    <div class="col-xl-2">
+                            <div class="single-brand">
+                                <img style="width: 120px; margin-top:-25px;" src="../Dashboard/public/update/defult/pngwing.com (1).png" alt="img">
+                            </div>
+                        </div>
+                        <div class="col-xl-2">
+                            <div class="single-brand">
+                                <img src="../Dashboard/public/update/brand/brand_img02.png" alt="img">
+                            </div>
+                        </div>
+                        <div class="col-xl-2">
+                            <div class="single-brand">
+                                <img style="width: 140px;margin-top:-25px;" src="../Dashboard/public/update/defult/pngwing.com.png" alt="img">
+                            </div>
+                        </div>
+                        <div class="col-xl-2">
+                            <div class="single-brand">
+                            <img style="width: 120px; margin-top:-25px;" src="../Dashboard/public/update/defult/pngwing.com (1).png" alt="img">
+                            </div>
+                        </div>
+                        <div class="col-xl-2">
+                            <div class="single-brand">
+                                <img src="../Dashboard/public/update/brand/brand_img05.png" alt="img">
+                            </div>
+                        </div>
+                       
                     </div>
                 </div>
             </div>
