@@ -251,7 +251,7 @@ $contacts = mysqli_query($db,$contacts_query);
                                     <span "><?= $educatio['description'] ?></span>
                                     <div class="progressWrapper">
                                         <div class="progress">
-                                            <div class="progress-bar wow slideInLefts" data-wow-delay="0.2s" data-wow-duration="2s" role="progressbar" style="width: 85%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar wow slideInLefts" data-wow-delay="0.2s" data-wow-duration="2s" role="progressbar" style="width:<?= $educatio['skill'] ?>;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -315,7 +315,7 @@ $contacts = mysqli_query($db,$contacts_query);
 								</div>
 								<div class="speaker-overlay">
 									<span>
-                                    <?= $portfoli['subtitle'] ?>
+                                   <?= $portfoli['subtitle'] ?>
                                     </span>
 									<h4><a href="portfolio-single.html">
                                     <?= $portfoli['title'] ?>
@@ -481,7 +481,7 @@ $contacts = mysqli_query($db,$contacts_query);
                     <div class="row align-items-center">
                         <div class="col-12">
                             <div class="copyright-text text-center">
-                                <p>Copyright© <span>Kufa</span> | All Rights Reserved</p>
+                                <p>Copyright© <span>SABBIR</span> | All Rights Reserved</p>
                             </div>
                         </div>
                     </div>

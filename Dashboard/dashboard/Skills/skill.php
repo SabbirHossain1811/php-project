@@ -29,6 +29,7 @@ $education = mysqli_query($db,$education_query);
                                 <th scope="col">#</th>
                                 <th scope="col">Year</th>
                                 <th scope="col">Description</th>
+                                <th scope="col">skill</th>
                                 <th scope="col">Status</th>
                                 <th scope="col">Action</th>
                             </tr>
@@ -48,6 +49,9 @@ $education = mysqli_query($db,$education_query);
                                 </td>
                                 <td>
                                     <?= $educatio['description'] ?>
+                                </td>
+                                <td>
+                                    <?= $educatio['skill'] ?>
                                 </td>
                                 <td>
                                         <a href="skill_manage.php?statusid=<?= $educatio['id'] ?>" style="font-size:14px; padding:7px" class="<?= ($educatio['status'] == 'deactive') ? 'badge bg-danger' : 'badge bg-success' ?> text-white " href=""><?=$educatio['status'] ?></a>

@@ -4,11 +4,12 @@ include '../../config/database.php';
 
 if (isset($_POST['skillbtn'])) {
     $year = $_POST['year'];
+    $skill = $_POST['skill'];
     $description = $_POST['description'];
 
 
     if ($year && $description) {
-        $insert_query = "INSERT INTO education (year, description) VALUES ('$year', '$description')";
+        $insert_query = "INSERT INTO education (year, description, skill) VALUES ('$year', '$description','$skill')";
         mysqli_query($db,$insert_query);
         header('location: skill.php');
     }
@@ -55,10 +56,11 @@ if(isset($_POST['update'])){
         $id = $_GET['updateid'];
 
         $year = $_POST['year'];
+        $skill = $_POST['skill'];
         $description = $_POST['description'];
     
         if($year && $description){
-            $query_update = "UPDATE education SET year='$year',description='$description' WHERE id='$id'";
+            $query_update = "UPDATE education SET year='$year',description='$description',skill='$skill' WHERE id='$id'";
             mysqli_query($db,$query_update);
             $_SESSION['edu_edit'] = "Education Informations Update Successfully Complete"; 
             header('location: skill.php');

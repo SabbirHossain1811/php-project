@@ -38,8 +38,8 @@ if(isset( $_SESSION['author_id'])){
     <link href="../public/backend/assets/css/main.min.css" rel="stylesheet">
     <link href="../public/backend/assets/css/custom.css" rel="stylesheet">
 
-    <link rel="icon" type="image/png" sizes="32x32" href="../public/backend/assets/images/neptune.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="../public/backend/assets/images/neptune.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../public/update/defult/sabbir (1).png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../public/update/defult/sabbir (1).png" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

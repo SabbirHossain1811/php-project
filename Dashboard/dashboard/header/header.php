@@ -231,7 +231,7 @@ $user = mysqli_fetch_assoc($conncet);
                         <ul class="navbar-nav">
                             <!-- Dashboard LogOut here...........!! -->
                             <li class="nav-item hidden-on-mobile">
-                            <a style="display:flex; gap:10px; background-color:#8cc090; " class="nav-link btn  btn-sm text-white fa-solid" href="../logout/logout.php">LogOut<i style="margin-top: 4px;" class="fa-solid fa-person-walking-luggage"></i></a>
+                            <a style="display:flex; gap:10px; " class="nav-link btn  btn-sm text-white fa-solid bg-danger" href="../logout/logout.php">LogOut<i style="margin-top: 4px;" class="fa-solid fa-person-walking-luggage"></i></a>
 
 
                             </li>

@@ -27,7 +27,7 @@ include '../header/footer.php';
     <!-- dashBoard Login sussecs Message....... -->
 
     <div class="row">
-        <div class="col-6">
+        <div class="col">
             <div class="card">
                 <div class="card-header">
                     <div class="example-content">
@@ -60,6 +60,13 @@ include '../header/footer.php';
                                     </td>
                                     <td>
                                     <?= $user['email']?>
+
+
+                                    <div class="d-flex justify-content-around align-items-center">
+                                            <a style="margin-left: 500px;" href="home_manage.php?deleteid=<?= $user['id'] ?>" class="text-danger fa-2x">
+                                                <i class="fa fa-trash-o"></i>
+                                            </a>
+                                        </div>
                                     </td>
                                     
                                 </tr>

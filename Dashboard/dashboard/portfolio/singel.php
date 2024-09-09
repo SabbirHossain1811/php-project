@@ -13,7 +13,18 @@ $portfolios = mysqli_fetch_assoc($connect);
 
 
 }
+if(isset($_SESSION['author_id'])){
+    
+    $id = $_SESSION['author_id'];
+    $users_query = "SELECT * FROM users WHERE  id='$id' ";
+    $connect = mysqli_query($db,$users_query);
+    $user = mysqli_fetch_assoc($connect);
 
+}else{
+    $users_query = "SELECT * FROM users";
+    $connect = mysqli_query($db,$users_query);
+    $user = mysqli_fetch_assoc($connect); 
+};
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -22,11 +33,11 @@ $portfolios = mysqli_fetch_assoc($connect);
 <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Kufa - Personal Portfolio HTML5 Template</title>
+        <title>Sabbir Personal Portfolio </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="shortcut icon" type="image/x-icon" href="../../public/frontent/../../public/frontent/img/favicon.png">
+        <link rel="shortcut icon" type="image/x-icon" href="../../public/update/defult/sabbir.png">
         <!-- Place favicon.ico in the root directory -->
 
 		<!-- CSS here -->
@@ -63,8 +74,9 @@ $portfolios = mysqli_fetch_assoc($connect);
                         <div class="col-xl-12">
                             <div class="main-menu">
                                 <nav class="navbar navbar-expand-lg">
-                                    <a href="index.html" class="navbar-brand logo-sticky-none"><img src="../../public/frontend/../../public/frontent/img/logo/logo.png" alt="Logo"></a>
-                                    <a href="index.html" class="navbar-brand s-logo-none"><img src="../../public/frontend/../../public/frontent/img/logo/s_logo.png" alt="Logo"></a>
+                                    <!-- <a href="index.html" class="navbar-brand logo-sticky-none"><img src="" alt="Logo">SABBIR</a>
+                                    <a href="index.html" class="navbar-brand s-logo-none"><img src="" alt="Logo">SABBIR</a> -->
+                                    <h2 style="color:#8cc090;">SABBIR</h2>
                                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                                         data-target="#navbarNav">
                                         <span class="navbar-icon"></span>
@@ -155,7 +167,7 @@ $portfolios = mysqli_fetch_assoc($connect);
                                     <img src="../../public/update/portfolios/<?=$portfolios['image'] ?>" alt="img">
                                 </div>
                                 <div class="blog-list-content blog-details-content portfolio-details-content">
-                                    <h2><?= $portfolios['title'] ?></h2>
+                                   <h2><?= $portfolios['title'] ?></h2> <strong><a style="text-decoration: none; font-size:20px; color:white;" href="../../public/wbsite/potfolio project/index.html">View Website.</a><h3></h3></strong>
                                     <p>
                                     <?= $portfolios['description'] ?>
                                     </p>
@@ -176,10 +188,14 @@ $portfolios = mysqli_fetch_assoc($connect);
                                     <ul>
                                         <li>
                                             <div class="post-avatar-img">
-                                                <img src="../../public/frontend/../../public/frontent/img/blog/post_avatar_img.png" alt="img">
+                                                <img style="height: 80px; width:80px" src="../../public/update/profile/46-Sabbir-08-09-2024.png" alt="img">
                                             </div>
                                             <div class="post-avatar-content">
-                                                <h5>Thomas Herlihy</h5>
+                                            <?php if(isset($_SESSION['author_id'])) : ?>
+                                                <h5 class="wow fadeInUp" data-wow-delay="0.4s"><?= $user['name'] ?></h5>
+                                                <?php else:?>
+                                                    <h5 class="wow fadeInUp" data-wow-delay="0.4s"><?= $user['name'] ?></h5>
+                                                <?php endif; ?>
                                                 <p>Vehicula dolor amet consectetur adipiscing elit. Cras sollicitudin, tellus vitae
                                                     condimem
                                                     egestliberos dolor auctor
@@ -210,7 +226,7 @@ $portfolios = mysqli_fetch_assoc($connect);
                     <div class="row align-items-center">
                         <div class="col-12">
                             <div class="copyright-text text-center">
-                                <p>Copyright© <span>Kufa</span> | All Rights Reserved</p>
+                                <p>Copyright© <span>SABBIR</span> | All Rights Reserved</p>
                             </div>
                         </div>
                     </div>

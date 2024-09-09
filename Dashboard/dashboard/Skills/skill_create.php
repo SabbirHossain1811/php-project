@@ -17,6 +17,9 @@ include '../../public/icon/icon.php';
 
                     <label style="font-weight: bold;" for="exampleInputEmail1" class="form-label my-2">Skill description</label>
                     <textarea style="font-size: 15px;" name="description" class="form-control" rows="5"></textarea>
+
+                    <label style="font-weight: bold;" for="exampleInputEmail1" class="form-label my-2">Skills</label>
+                    <input style="font-size: 15px;" type="text" name="skill" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     <picture>
                         <img id="chng-img" src="../../public/update/defult/funny.jpg" alt="" style="width: 100%; height:400px; object-fit:contain">
                     </picture>
