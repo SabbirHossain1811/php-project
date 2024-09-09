@@ -24,6 +24,7 @@ $contacts = mysqli_query($db,$contact_query );
                                 <th scope="col">#</th>
                                 <th scope="col">Addres</th>
                                 <th scope="col">Number</th>
+                                <th scope="col">description</th>
                                 <th scope="col">status</th>
                                 <th scope="col">Action</th>
                             </tr>
