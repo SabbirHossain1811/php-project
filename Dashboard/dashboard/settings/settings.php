@@ -14,7 +14,7 @@ include '../header/header.php';
 </div>
 
 <div class="row">
-    <div class="col-5">
+    <div class="col-12">
         <div class="card">
             <div class="card-header">
                 <h4 style="font-weight: bold;"> Update Your UserName...!! </h4>
@@ -53,7 +53,7 @@ include '../header/header.php';
 
 
 
-    <div class="col-5">
+    <div class="col-12">
         <div class="card">
             <div class="card-header">
                 <h4 style="font-weight: bold;"> Update Your Password...!! </h4>
@@ -96,7 +96,7 @@ include '../header/header.php';
         </div>
     </div>
 
-    <div style="margin-top: -160px;" class="col-5">
+    <div  class="col-12">
         <div class="card">
             <div class="card-header">
                 <h4 style="font-weight: bold;"> Update Your Email...!! </h4>
@@ -134,7 +134,7 @@ include '../header/header.php';
 
 <!-- 
     IMAGE UPDATE HERE  -->
-    <div class="col-5">
+    <div class="col-12">
         <div class="card">
             <div class="card-header">
                 <h4 style="font-weight: bold;"> Update Your Image...!! </h4>

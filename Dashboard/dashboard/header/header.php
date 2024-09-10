@@ -79,7 +79,7 @@ $user = mysqli_fetch_assoc($conncet);
                     <span class="activity-indicator"></span>
                     <span class="user-info-text"><?= $_SESSION['author_name'] ?><br><span class="user-state-info"><?= $_SESSION['author_email'] ?></span></span>
 
-                    <?php if ($user['image'] == 'defult imge.png') : ?>
+                    <?php if ($user['image'] == 'cat.jpg') : ?>
                         <img style="width: 40px;" src="../../public/update/defult/<?= $user['image'] ?>">
                     <?php else : ?>
                         <img style="width: 40px;" src="../../public/update/profile/<?= $user['image'] ?>">

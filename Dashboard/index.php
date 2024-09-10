@@ -210,9 +210,9 @@ $contacts = mysqli_query($db, $contacts_query);
                     </div>
                     <div class="col-xl-5 col-lg-6 d-none d-lg-block">
                         <div class="banner-img text-right">
-                            <?php if ($user['image'] == 'defult imge.png') : ?>
-                                <img style="width: 900px;" src="../Dashboard/public/update/defult/<?= $user['image'] ?>">
-                            <?php else : ?>
+                            <?php if ($user['image'] == 'cat.jpg') : ?>
+                                <img style="width: 800px; margin-right:100px; margin-top:-400px;" src="../Dashboard/public/update/defult/<?= $user['image'] ?>">
+                            <?php else : ?> 
                                 <img style="width: 900px;" src="../Dashboard/public/update/profile/<?= $user['image'] ?>">
                             <?php endif; ?>
                         </div>

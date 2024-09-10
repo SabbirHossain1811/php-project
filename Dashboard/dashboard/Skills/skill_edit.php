@@ -32,7 +32,7 @@ if(isset($_GET['editid'])){
                     <input style="font-size: 15px;" type="text" name="skill" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="<?= $education['skill'] ?>">
 
                     <picture>
-                        <img id="chng-img" src="../../public/update/defult/funny.jpg" alt="" style="width: 100%; height:400px; object-fit:contain">
+                        <img id="chng-img" src="../../public/update/defult/cat.jpg" alt="" style="width: 100%; height:400px; object-fit:contain">
                     </picture>
                     <label style="font-weight: bold;" for="exampleInputEmail1" class="form-label my-2">funny Image</label>
                     <input name="image"style="font-size: 15px;" type="file" class="form-control" id="icon" aria-describedby="emailHelp">
