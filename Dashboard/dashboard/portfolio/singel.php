@@ -167,7 +167,7 @@ if(isset($_SESSION['author_id'])){
                                     <img src="../../public/update/portfolios/<?=$portfolios['image'] ?>" alt="img">
                                 </div>
                                 <div class="blog-list-content blog-details-content portfolio-details-content">
-                                   <h2><?= $portfolios['title'] ?></h2> <strong><a style="text-decoration: none; font-size:20px; color:white;" href="../../public/wbsite/potfolio project/index.html">View Website.</a><h3></h3></strong>
+                                   <h2><?= $portfolios['title'] ?></h2> <strong><a style="text-decoration: none; font-size:20px; color:white;" href="../../public/potfolio project/index.html">View Website.</a><h3></h3></strong>
                                     <p>
                                     <?= $portfolios['description'] ?>
                                     </p>

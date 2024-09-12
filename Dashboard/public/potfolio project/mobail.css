@@ -1,0 +1,587 @@
+@media(max-width: 992px){
+   
+}
+
+@media(max-width: 768px){
+  
+  .header--menu{
+    display: flex;
+    flex-direction: column;
+    gap:70px;
+  }
+  nav ul{
+    display: flex;
+    font-size: 0.7rem;
+    margin-right:0;
+    
+    
+ }
+ 
+ nav li{
+  
+ }
+ .header--menu h2{
+  font-size: 1.5rem;
+  margin-right: 0px;
+  font-weight: bolder;
+}
+.header--menu .home{
+  
+  margin:5px 6px;
+}
+.header--menu .about{
+  
+  margin:5px 6px;
+}
+.header--menu .skill{
+  
+  margin:5px 6px;
+}
+.header--menu .service{
+  
+  margin:5px 6px;
+}
+.header--menu .project{
+  
+  margin:5px 6px;
+}
+.header--menu .contact{
+  
+  margin:5px 6px;
+}
+.home-menu--imgss{
+  justify-content:center;
+  flex-direction: column;
+  
+}
+
+.home--menu--dis{
+  margin-right:300px;
+  margin-top: 260px;
+  padding: 0;
+  display: flex;
+  text-align:start;
+  justify-content:start;
+  z-index: 1;
+}
+.home--menu--dis h3{
+  font-size:0.9rem ;
+ color: black;
+}
+.home--menu--dis p{
+  font-size:1.5rem ;
+  font-weight: bolder;
+}
+.home--menu--imgg img{
+  width: 500px;
+  height: 500px;
+  margin-top:-950px;
+  margin-left:160px ;
+}
+.home--menu--btn{
+  display: flex;
+  margin-right: 30px;
+ 
+}
+
+/* main start  */
+
+.main--st{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.btn-main{
+  margin-right: 100px;
+}
+.about-contant{
+   flex-direction: column;
+  
+}
+.btn-main i{
+font-size: 1.4rem;
+
+}
+.st--disss .st--dis{
+  font-size: 1.3rem;
+}
+.btn-main button{
+  font-size: 1.8rem;
+  padding:10px 15px;
+}
+ .coffe{
+ margin-right: 120px;
+ }
+.st--disss p{
+font-size: 1rem;
+}
+ .st--disss .main--st-dis {
+  font-size: 0.7rem;
+ }
+.about-img img{
+    width: 100%;
+    height:300px;
+    margin-right: 50px;
+    margin-top: 30px;
+    border-radius: 40px;
+  
+}
+.about--dis{
+    text-align: justify;
+    margin-top: -50px;
+    margin: auto ;
+    padding: 20px;
+}
+.about-icon{
+ 
+    display: flex;
+    gap: 5px;
+  }
+  .about-icon button{
+    padding: 10px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 50%;
+    background-color: #6f7b6f;
+    color: white;
+  }
+  .about-icon p{
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-left: 45px;
+    margin-top: -30px;
+  }
+  .about--dis .abt-dis{
+  font-size: 0.8rem;
+  padding: 10px;
+ }
+.about--name p{
+  font-size: 1rem;
+}
+.about--name span{
+  font-size: 0.8rem;
+  margin-left: 130px;
+}
+.about-icon{
+  margin-left:-10px;
+}
+.about-icon button{
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50%;
+  background-color: #6f7b6f;
+  color: white;
+}
+  /* skill start */
+  .skill--parsent{
+    display: flex;
+    text-align: center;
+    justify-content: center; 
+    flex-direction: column;
+    margin-left: 5px;
+    margin-top: 30px;
+    height: 100%;
+    gap: 50px;
+  }
+  .skill--dis {
+    background-color: white;
+    padding:4rem 3rem;
+    width: 20rem;
+    height: 250px;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    border-radius: 20px;
+  }
+  .skill-date span{
+    font-size: 0.8rem;
+  }
+  .akill--dis{
+    padding: 70px 10px;
+  }
+  .skill--secrion{
+    margin-top: -50px;
+    padding: 80px 0px;
+    align-items: center;
+    display: flex;
+   
+  }
+  .akill--dis p{
+    font-size: 1rem;
+    color: #80967f;
+    opacity: 70%;
+    letter-spacing: 1px;
+  
+  }
+  .akill--dis h2{
+    font-size: 2.3rem;
+  }
+  .skill--dis .skill-p{
+    font-size: 0.8rem;
+    opacity: 50%;
+    top: 20px;
+  }
+  /* skill send */
+
+
+  /* service start here */
+  .service--text{
+    margin-top: 70px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+   
+  }
+  .web-desing{
+   margin-left: -30px;
+  }
+  .Servicr--dis h2{
+    font-size: 1.2rem;
+    margin-right: -200px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-left:-90px ;
+   
+    
+    
+  }
+  .Servicr--dis p{
+    font-size: 0.9rem;
+    color: #80967f;
+    opacity: 80%;
+    letter-spacing: 1px;
+  
+  }
+    /* service end here */
+
+    /* project start here */
+    .project--dis{
+      padding-top: 120px;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      background-color: #96a994;
+      align-items: center;
+      flex-direction: column;
+    }
+    .project-contant{
+      display: flex;
+      flex-direction: column;
+    }
+    .project--imgg img{
+     margin-top: 0;
+      width:310px;
+      height: 350px;
+     
+    }
+    .project--menu h2{
+      font-size: 1.6rem;
+      font-family: sans-serif;
+      color: white;
+      opacity: 90%;
+      margin-left: 20px;
+    }
+    .project--menu p{
+      padding: 20px 10px;
+      font-size: 0.9rem;
+     
+    } 
+    .project--menu button{
+     display: flex;
+     text-align: center;
+     margin: auto;
+     align-items: center;
+     justify-content: center;
+      
+    }
+    .all- img{
+      display: flex;
+      flex-direction: column;
+    }
+    .projrct--img{
+      display: flex;
+      flex-direction: column;
+
+    }
+    .img1 img{
+      width: 280px;
+      height: 180px;
+      border-radius: 20px;
+      margin-left: 45px;
+    }
+    .projrct--img h3{
+      font-size: 1rem;
+      margin-left: 100px;
+    ;
+    }
+    .projrct--img2{
+      display: flex;
+      flex-direction: column;
+      margin-left:-30px;
+    }
+    .projrct--img2 h3{
+      font-size: 1rem;
+      margin-left: 100px;
+    }
+    .projects{
+      display: flex;
+      flex-direction: column;
+    }
+    .projects h2{
+      font-size: 2rem;
+    
+    }
+    .sabbir2{
+      display: flex;
+      flex-direction: column;
+     
+    }
+    .project--dis2{
+      width: 300px;
+      height: 250px;
+      gap: 10px;
+      padding:  30px;
+      margin-top: 10px;
+      margin-left: -10px;
+    }
+    .project--dis2 p{
+      font-size: 1rem;
+    }
+    /* project emd here */
+
+    /* contact start here */
+    .contact--contant{
+      display: flex;
+      flex-direction: column;
+      padding: 60px;
+    }
+    .div-one{
+      display: flex;
+      flex-direction: column;
+    }
+    .contact--contant .contatt h2{
+      margin-left: 50px;
+    }
+    .div-tow{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      background-color: rgb(234, 246, 244);
+      padding: 70px 0px;
+      border-radius: 20px;
+      margin-left:-60px ;
+     }
+     .div-tow input{
+      margin-right: -10px;
+      width: 160px;
+      height: 40px;
+     
+     }
+     .div-tow .inpt-sa{
+      width: 330px;
+      
+    }
+    .div-tow .inpt-saa{
+      width: 330px;
+      height: 170px;
+     
+    }
+    .div-tow  button{
+      width: 160px;
+    }
+    .div-three{
+      gap: 50px;
+      margin-left: -40px;
+    }
+    .div-three p{
+      font-size: 1.3rem;
+    }
+    /* contact emd here */
+/* main end  */
+
+/* footer start herer */
+.footer--menu p{
+  margin-top: 10px;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  font-family: sans-serif;
+
+}
+.footer--str2{
+  margin-top: 40px;
+}
+.footer--str3{
+  margin-top: 40px;
+}
+.footer--str4{
+  margin-top: 40px;
+}
+.footer--contant{
+  display: flex;
+  flex-direction: column;
+  margin-left: -50px;
+  font-size: 0.9rem;
+}
+.fb-wh-in button{
+  background-color: #535553;
+  padding: 10px;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  margin: 5px;
+  opacity: 60%;
+}
+.footer--p p{
+  font-size: 0.9rem;
+  margin-left: 990px;
+  margin: 0 auto;
+  padding: auto;
+}
+.footer--menu .fotter_menu p{
+  margin-top: -5px;
+}
+.footer--p{
+  margin-left: -50px;
+}
+}
+@media(max-width: 600px){
+  /* .header--menu{
+    display: flex;
+    flex-direction: column;
+    gap:70px;
+  }
+  nav ul{
+    display: flex;
+    font-size: 0.8rem;
+    margin-right:0;
+    
+    
+ }
+ 
+ nav li{
+  
+ }
+ .header--menu h2{
+  font-size: 1.5rem;
+  margin-right: 0px;
+  font-weight: bolder;
+}
+.header--menu .home{
+  
+  margin:5px 6px;
+}
+.header--menu .about{
+  
+  margin:5px 6px;
+}
+.header--menu .skill{
+  
+  margin:5px 6px;
+}
+.header--menu .service{
+  
+  margin:5px 6px;
+}
+.header--menu .project{
+  
+  margin:5px 6px;
+}
+.header--menu .contact{
+  
+  margin:5px 6px;
+}
+.home-menu--imgss{
+  justify-content:center;
+  flex-direction: column;
+}
+.home--menu--dis{
+  margin-right:300px;
+  margin-top: 260px;
+  padding: 0;
+  display: flex;
+  text-align:start;
+  justify-content:start;
+  z-index: 1;
+}
+.home--menu--dis h3{
+  font-size:1rem ;
+ color: black;
+}
+.home--menu--dis p{
+  font-size:1.5rem ;
+  font-weight: bolder;
+}
+.home--menu--imgg img{
+  width: 600px;
+  height: 600px;
+  margin-top:-550px;
+  margin-left:160px ;
+}
+.home--menu--btn{
+  display: flex;
+  margin-right: 30px;
+ 
+}
+
+/* main start  */
+
+.main--st{
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* main end  */
+
+/* footer start herer */
+.footer--menu p{
+  margin-top: 10px;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  font-family: sans-serif;
+
+}
+.footer--str2{
+  margin-top: 40px;
+}
+.footer--str3{
+  margin-top: 40px;
+}
+.footer--str4{
+  margin-top: 40px;
+}
+.footer--contant{
+  display: flex;
+  flex-direction: column;
+
+  font-size: 1rem;
+}
+.fb-wh-in button{
+  background-color: #535553;
+  padding: 10px;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  margin: 8px;
+  opacity: 60%;
+}
+.footer--p p{
+  font-size: 0.rem;
+  margin-left: 990px;
+  margin: 0 auto;
+  padding: auto;
+}
+
+}
